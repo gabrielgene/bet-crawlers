@@ -1,0 +1,6411 @@
+{
+  "football-germany-amateur": [
+    {
+      "home": "VfB Eichstatt",
+      "visitant": "SV Schalding-Heining",
+      "home_odd": "1,90",
+      "draw_odd": null,
+      "visitant_odd": "3,70",
+      "debug": [
+        "13:30",
+        "VfB Eichstatt",
+        "SV Schalding-Heining",
+        "1,90",
+        "3,70",
+        "3,30",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,25",
+          "12",
+          "1,20",
+          "X2",
+          "1,75"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,16",
+          "12",
+          "1,47",
+          "X2",
+          "1,42"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,10",
+          "X",
+          "3,90",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "5,20",
+          "2",
+          "5,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,45",
+          "2",
+          "2,55"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "17",
+          "2",
+          "2,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,25",
+          "2",
+          "3,80"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,10",
+          "X",
+          "3,90",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "5,20",
+          "2",
+          "5,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "17",
+          "2",
+          "2,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Does VfB Eichstatt score at least one goal?",
+          "Y",
+          "1,11",
+          "N",
+          "4,70"
+        ],
+        [
+          "Does SV Schalding-Heining score at least one goal?",
+          "Y",
+          "1,25",
+          "N",
+          "3,30"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,00",
+          "X",
+          "3,40",
+          "2",
+          "2,80"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,25",
+          "2",
+          "3,80"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,00",
+          "X",
+          "3,40",
+          "2",
+          "2,80"
+        ]
+      ]
+    },
+    {
+      "home": "Schweinfurt 05",
+      "visitant": "Viktoria Aschaffenburg",
+      "home_odd": "1,25",
+      "draw_odd": null,
+      "visitant_odd": "5,70",
+      "debug": [
+        "14:00",
+        "Schweinfurt 05",
+        "Viktoria Aschaffenburg",
+        "1,25",
+        "5,70",
+        "8,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,03",
+          "12",
+          "1,08",
+          "X2",
+          "3,30"
+        ],
+        [
+          "Double chance First Half",
+          "    12",
+          "1,27",
+          "X2",
+          "2,05"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "1,60",
+          "X",
+          "4,40",
+          "2",
+          "3,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "2,35",
+          "X",
+          "4,00",
+          "2",
+          "2,00"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,04",
+          "2",
+          "8,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,30",
+          "-",
+          "3,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,08",
+          "-",
+          "6,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,25",
+          "X",
+          "25",
+          "2",
+          "3,50"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,55",
+          "X",
+          "2,80",
+          "2",
+          "7,50"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "1,60",
+          "X",
+          "4,40",
+          "2",
+          "3,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "2,35",
+          "X",
+          "4,00",
+          "2",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,30",
+          "-",
+          "3,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,08",
+          "-",
+          "6,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,25",
+          "X",
+          "25",
+          "2",
+          "3,50"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Does Schweinfurt 05 score at least one goal?",
+          "Y",
+          "1,02",
+          "N",
+          "7,50"
+        ],
+        [
+          "Does Viktoria Aschaffenburg score at least one goal?",
+          "Y",
+          "1,52",
+          "N",
+          "2,25"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,45",
+          "X",
+          "4,30",
+          "2",
+          "4,30"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "4,00",
+          "2",
+          "1,85"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "4,00",
+          "2",
+          "1,85"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "1,80",
+          "-",
+          "1,90"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,18",
+          "-",
+          "4,30"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,55",
+          "X",
+          "2,80",
+          "2",
+          "7,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,45",
+          "X",
+          "4,30",
+          "2",
+          "4,30"
+        ]
+      ]
+    },
+    {
+      "home": "FC Ingolstadt II",
+      "visitant": "FC Pipinsried",
+      "home_odd": "1,80",
+      "draw_odd": null,
+      "visitant_odd": "3,70",
+      "debug": [
+        "14:00",
+        "FC Ingolstadt II",
+        "FC Pipinsried",
+        "1,80",
+        "3,70",
+        "3,50",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,20",
+          "12",
+          "1,18",
+          "X2",
+          "1,80"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,14",
+          "12",
+          "1,45",
+          "X2",
+          "1,45"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,90",
+          "X",
+          "3,80",
+          "2",
+          "1,80"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,20",
+          "X",
+          "5,20",
+          "2",
+          "6,00"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,37",
+          "2",
+          "2,80"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,57",
+          "X",
+          "17",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,47",
+          "N",
+          "2,50"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,30",
+          "X",
+          "2,25",
+          "2",
+          "4,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,90",
+          "X",
+          "3,80",
+          "2",
+          "1,80"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,20",
+          "X",
+          "5,20",
+          "2",
+          "6,00"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,57",
+          "X",
+          "17",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,47",
+          "N",
+          "2,50"
+        ],
+        [
+          "Does FC Ingolstadt II score at least one goal?",
+          "Y",
+          "1,10",
+          "N",
+          "5,00"
+        ],
+        [
+          "Does FC Pipinsried score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,10"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,95",
+          "X",
+          "3,60",
+          "2",
+          "2,90"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,30",
+          "X",
+          "2,25",
+          "2",
+          "4,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,95",
+          "X",
+          "3,60",
+          "2",
+          "2,90"
+        ]
+      ]
+    },
+    {
+      "home": "Wacker Burghausen",
+      "visitant": "SpVgg Bayreuth",
+      "home_odd": "1,55",
+      "draw_odd": null,
+      "visitant_odd": "4,00",
+      "debug": [
+        "14:00",
+        "Wacker Burghausen",
+        "SpVgg Bayreuth",
+        "1,55",
+        "4,00",
+        "5,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,12",
+          "12",
+          "1,18",
+          "X2",
+          "2,20"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,08",
+          "12",
+          "1,42",
+          "X2",
+          "1,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,35",
+          "X",
+          "3,80",
+          "2",
+          "2,20"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,00",
+          "X",
+          "4,40",
+          "2",
+          "1,42"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,18",
+          "2",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,45",
+          "-",
+          "2,55"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,13",
+          "-",
+          "5,00"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,10",
+          "-",
+          "1,65"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,40",
+          "-",
+          "1,27"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,42",
+          "X",
+          "18",
+          "2",
+          "2,70"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,52",
+          "N",
+          "2,35"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,00",
+          "X",
+          "2,35",
+          "2",
+          "5,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,35",
+          "X",
+          "3,80",
+          "2",
+          "2,20"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,00",
+          "X",
+          "4,40",
+          "2",
+          "1,42"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,45",
+          "-",
+          "2,55"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,13",
+          "-",
+          "5,00"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,10",
+          "-",
+          "1,65"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,40",
+          "-",
+          "1,27"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,42",
+          "X",
+          "18",
+          "2",
+          "2,70"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,52",
+          "N",
+          "2,35"
+        ],
+        [
+          "Does Wacker Burghausen score at least one goal?",
+          "Y",
+          "1,07",
+          "N",
+          "5,70"
+        ],
+        [
+          "Does SpVgg Bayreuth score at least one goal?",
+          "Y",
+          "1,35",
+          "N",
+          "2,65"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,60",
+          "2",
+          "3,40"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,70",
+          "2",
+          "1,90"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,70",
+          "2",
+          "1,90"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,10",
+          "-",
+          "1,65"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,00",
+          "X",
+          "2,35",
+          "2",
+          "5,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,60",
+          "2",
+          "3,40"
+        ]
+      ]
+    },
+    {
+      "home": "FC Memmingen",
+      "visitant": "TSV Buchbach",
+      "home_odd": "2,15",
+      "draw_odd": null,
+      "visitant_odd": "3,40",
+      "debug": [
+        "14:30",
+        "FC Memmingen",
+        "TSV Buchbach",
+        "2,15",
+        "3,40",
+        "2,90",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,32",
+          "12",
+          "1,22",
+          "X2",
+          "1,57"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,20",
+          "12",
+          "1,52",
+          "X2",
+          "1,32"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "4,00",
+          "X",
+          "3,80",
+          "2",
+          "1,57"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,40",
+          "2",
+          "5,50"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,60",
+          "2",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "12,50",
+          "2",
+          "2,10"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,70",
+          "X",
+          "2,15",
+          "2",
+          "3,50"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "4,00",
+          "X",
+          "3,80",
+          "2",
+          "1,57"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,40",
+          "2",
+          "5,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "12,50",
+          "2",
+          "2,10"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Does FC Memmingen score at least one goal?",
+          "Y",
+          "1,18",
+          "N",
+          "3,80"
+        ],
+        [
+          "Does TSV Buchbach score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,10"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,25",
+          "X",
+          "3,10",
+          "2",
+          "2,70"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,70",
+          "X",
+          "2,15",
+          "2",
+          "3,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,25",
+          "X",
+          "3,10",
+          "2",
+          "2,70"
+        ]
+      ]
+    },
+    {
+      "home": "Greuther Furth II",
+      "visitant": "VfR Garching",
+      "home_odd": "1,85",
+      "draw_odd": null,
+      "visitant_odd": "3,80",
+      "debug": [
+        "08:00",
+        "Greuther Furth II",
+        "VfR Garching",
+        "1,85",
+        "3,80",
+        "3,40",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,25",
+          "12",
+          "1,20",
+          "X2",
+          "1,80"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,16",
+          "12",
+          "1,42",
+          "X2",
+          "1,42"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,90",
+          "X",
+          "4,00",
+          "2",
+          "1,80"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "5,50",
+          "2",
+          "5,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,40",
+          "2",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,40",
+          "-",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,12",
+          "-",
+          "5,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,00",
+          "-",
+          "1,70"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "20",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,37",
+          "N",
+          "2,80"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,30",
+          "X",
+          "2,35",
+          "2",
+          "3,70"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,90",
+          "X",
+          "4,00",
+          "2",
+          "1,80"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "5,50",
+          "2",
+          "5,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,40",
+          "-",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,12",
+          "-",
+          "5,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,00",
+          "-",
+          "1,70"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "20",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,37",
+          "N",
+          "2,80"
+        ],
+        [
+          "Does Greuther Furth II score at least one goal?",
+          "Y",
+          "1,09",
+          "N",
+          "5,00"
+        ],
+        [
+          "Does VfR Garching score at least one goal?",
+          "Y",
+          "1,20",
+          "N",
+          "3,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,90",
+          "X",
+          "3,80",
+          "2",
+          "2,70"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,80",
+          "2",
+          "1,90"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,80",
+          "2",
+          "1,90"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,00",
+          "-",
+          "1,70"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,30",
+          "X",
+          "2,35",
+          "2",
+          "3,70"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,90",
+          "X",
+          "3,80",
+          "2",
+          "2,70"
+        ]
+      ]
+    },
+    {
+      "home": "1 FC Nuremberg II",
+      "visitant": "TSV 1860 Rosenheim",
+      "home_odd": "1,90",
+      "draw_odd": null,
+      "visitant_odd": "3,50",
+      "debug": [
+        "09:00",
+        "1 FC Nuremberg II",
+        "TSV 1860 Rosenheim",
+        "1,90",
+        "3,50",
+        "3,50",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,22",
+          "12",
+          "1,22",
+          "X2",
+          "1,75"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,13",
+          "12",
+          "1,47",
+          "X2",
+          "1,37"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,20",
+          "X",
+          "3,60",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,22",
+          "X",
+          "5,00",
+          "2",
+          "6,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,40",
+          "2",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,65",
+          "-",
+          "2,10"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,20",
+          "-",
+          "4,00"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,50",
+          "-",
+          "1,17"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "13",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,15",
+          "2",
+          "3,90"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,20",
+          "X",
+          "3,60",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,22",
+          "X",
+          "5,00",
+          "2",
+          "6,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,65",
+          "-",
+          "2,10"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,20",
+          "-",
+          "4,00"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,50",
+          "-",
+          "1,17"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "13",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Does 1 FC Nuremberg II score at least one goal?",
+          "Y",
+          "1,13",
+          "N",
+          "4,40"
+        ],
+        [
+          "Does TSV 1860 Rosenheim score at least one goal?",
+          "Y",
+          "1,32",
+          "N",
+          "2,80"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,05",
+          "X",
+          "3,10",
+          "2",
+          "3,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,15",
+          "2",
+          "3,90"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,05",
+          "X",
+          "3,10",
+          "2",
+          "3,00"
+        ]
+      ]
+    },
+    {
+      "home": "SV Heimstetten",
+      "visitant": "FC Augsburg II",
+      "home_odd": "2,20",
+      "draw_odd": null,
+      "visitant_odd": "3,50",
+      "debug": [
+        "09:00",
+        "SV Heimstetten",
+        "FC Augsburg II",
+        "2,20",
+        "3,50",
+        "2,80",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,35",
+          "12",
+          "1,22",
+          "X2",
+          "1,55"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,20",
+          "12",
+          "1,47",
+          "X2",
+          "1,32"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,80",
+          "X",
+          "4,00",
+          "2",
+          "1,55"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,35",
+          "X",
+          "4,50",
+          "2",
+          "5,00"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,65",
+          "2",
+          "2,10"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,16",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "15",
+          "2",
+          "2,00"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,70",
+          "X",
+          "2,20",
+          "2",
+          "3,30"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,80",
+          "X",
+          "4,00",
+          "2",
+          "1,55"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,35",
+          "X",
+          "4,50",
+          "2",
+          "5,00"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,16",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "15",
+          "2",
+          "2,00"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Does SV Heimstetten score at least one goal?",
+          "Y",
+          "1,15",
+          "N",
+          "4,10"
+        ],
+        [
+          "Does FC Augsburg II score at least one goal?",
+          "Y",
+          "1,20",
+          "N",
+          "3,60"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "3,40",
+          "2",
+          "2,50"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,70",
+          "X",
+          "2,20",
+          "2",
+          "3,30"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "3,40",
+          "2",
+          "2,50"
+        ]
+      ]
+    },
+    {
+      "home": "Bayern Munich II",
+      "visitant": "FV Illertissen",
+      "home_odd": "1,30",
+      "draw_odd": null,
+      "visitant_odd": "4,80",
+      "debug": [
+        "09:00",
+        "Bayern Munich II",
+        "FV Illertissen",
+        "1,30",
+        "4,80",
+        "8,00",
+        "  LIVE",
+        "+1"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,02",
+          "12",
+          "1,12",
+          "X2",
+          "3,00"
+        ]
+      ]
+    },
+    {
+      "home": "SC Freiburg II",
+      "visitant": "1. FC Saarbrücken",
+      "home_odd": "3,70",
+      "draw_odd": null,
+      "visitant_odd": "3,60",
+      "debug": [
+        "13:30",
+        "SC Freiburg II",
+        "1. FC Saarbrücken",
+        "3,70",
+        "3,60",
+        "1,80",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,80",
+          "12",
+          "1,20",
+          "X2",
+          "1,20"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,42",
+          "12",
+          "1,47",
+          "X2",
+          "1,12"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,80",
+          "X",
+          "3,70",
+          "2",
+          "3,00"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "5,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "2,90",
+          "2",
+          "1,35"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,60",
+          "-",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,18",
+          "-",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,30",
+          "-",
+          "1,18"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,35",
+          "X",
+          "14",
+          "2",
+          "1,57"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,55",
+          "N",
+          "2,30"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "4,10",
+          "X",
+          "2,20",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,80",
+          "X",
+          "3,70",
+          "2",
+          "3,00"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "5,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,60",
+          "-",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,18",
+          "-",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,30",
+          "-",
+          "1,18"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,35",
+          "X",
+          "14",
+          "2",
+          "1,57"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,55",
+          "N",
+          "2,30"
+        ],
+        [
+          "Does SC Freiburg II score at least one goal?",
+          "Y",
+          "1,32",
+          "N",
+          "2,80"
+        ],
+        [
+          "Does 1. FC Saarbrücken score at least one goal?",
+          "Y",
+          "1,12",
+          "N",
+          "4,70"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,30",
+          "-",
+          "1,55"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,30",
+          "-",
+          "3,20"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "4,10",
+          "X",
+          "2,20",
+          "2",
+          "2,30"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,00"
+        ]
+      ]
+    },
+    {
+      "home": "FC Homburg",
+      "visitant": "VFB Stuttgart II",
+      "home_odd": "1,90",
+      "draw_odd": null,
+      "visitant_odd": "3,60",
+      "debug": [
+        "14:00",
+        "FC Homburg",
+        "VFB Stuttgart II",
+        "1,90",
+        "3,60",
+        "3,30",
+        "  LIVE",
+        "+25"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,28",
+          "12",
+          "1,25",
+          "X2",
+          "1,75"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,30",
+          "X",
+          "3,80",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "6,50",
+          "X",
+          "5,50",
+          "2",
+          "1,25"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,28",
+          "X",
+          "5,00",
+          "2",
+          "6,50"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,45",
+          "2",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (0,5)",
+          "+",
+          "1,01",
+          "-",
+          "11"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,17",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,40"
+        ],
+        [
+          "Even/Odd?",
+          "E",
+          "1,80",
+          "O",
+          "1,80"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,20",
+          "2",
+          "3,60"
+        ],
+        [
+          "Winning Margin",
+          "Home by 1 goal",
+          "3,80",
+          "Away by 1 goal",
+          "5,00",
+          "Home by 2 goals",
+          "5,50",
+          "Away by 2 goals",
+          "10",
+          "Home by 3 goals",
+          "10",
+          "Away by 3 goals",
+          "27",
+          "Home by 4+ goals",
+          "20",
+          "Away by 4+ goals",
+          "60",
+          "0-0 Draw",
+          "15",
+          "Score Draw",
+          "4,30"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,30",
+          "X",
+          "3,80",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "6,50",
+          "X",
+          "5,50",
+          "2",
+          "1,25"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,28",
+          "X",
+          "5,00",
+          "2",
+          "6,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (0,5)",
+          "+",
+          "1,01",
+          "-",
+          "11"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,17",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,40"
+        ],
+        [
+          "Both teams to score in the 1st half?",
+          "Y",
+          "3,30",
+          "N",
+          "1,25"
+        ],
+        [
+          "Both teams to score in the 2nd half?",
+          "Y",
+          "2,55",
+          "N",
+          "1,40"
+        ],
+        [
+          "Does VFB Stuttgart II score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,20"
+        ],
+        [
+          "Does FC Homburg score at least one goal?",
+          "Y",
+          "1,12",
+          "N",
+          "4,80"
+        ],
+        [
+          "How many goals will FC Homburg score?",
+          "0",
+          "5,30",
+          "1-2",
+          "1,65",
+          "3+",
+          "3,40"
+        ],
+        [
+          "How many goals will VFB Stuttgart II score?",
+          "0",
+          "3,40",
+          "1-2",
+          "1,60",
+          "3+",
+          "6,00"
+        ],
+        [
+          "How many goals will be scored in this game?",
+          "0-1",
+          "4,70",
+          "2-3",
+          "2,10",
+          "4+",
+          "2,45"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,90"
+        ],
+        [
+          "Winning Margin",
+          "Home by 1 goal",
+          "3,80",
+          "Away by 1 goal",
+          "5,00",
+          "Home by 2 goals",
+          "5,50",
+          "Away by 2 goals",
+          "10",
+          "Home by 3 goals",
+          "10",
+          "Away by 3 goals",
+          "27",
+          "Home by 4+ goals",
+          "20",
+          "Away by 4+ goals",
+          "60",
+          "0-0 Draw",
+          "15",
+          "Score Draw",
+          "4,30"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,90"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,30",
+          "-",
+          "1,55"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "1.half Over/Under bet (2,5)",
+          "+",
+          "5,00",
+          "-",
+          "1,13"
+        ],
+        [
+          "Both teams to score in the 1st half?",
+          "Y",
+          "3,30",
+          "N",
+          "1,25"
+        ],
+        [
+          "Both teams to score in the 2nd half?",
+          "Y",
+          "2,55",
+          "N",
+          "1,40"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,20",
+          "2",
+          "3,60"
+        ]
+      ]
+    },
+    {
+      "home": "SSV Ulm 1846",
+      "visitant": "TSG Balingen",
+      "home_odd": "1,95",
+      "draw_odd": null,
+      "visitant_odd": "3,50",
+      "debug": [
+        "14:00",
+        "SSV Ulm 1846",
+        "TSG Balingen",
+        "1,95",
+        "3,50",
+        "3,30",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,25",
+          "12",
+          "1,22",
+          "X2",
+          "1,70"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,16",
+          "12",
+          "1,52",
+          "X2",
+          "1,37"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,50",
+          "X",
+          "3,60",
+          "2",
+          "1,70"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "6,20"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,45",
+          "2",
+          "2,55"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,65",
+          "X",
+          "12,50",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,50",
+          "X",
+          "2,15",
+          "2",
+          "3,90"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,50",
+          "X",
+          "3,60",
+          "2",
+          "1,70"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "6,20"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,65",
+          "X",
+          "12,50",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Does SSV Ulm 1846 score at least one goal?",
+          "Y",
+          "1,15",
+          "N",
+          "4,10"
+        ],
+        [
+          "Does TSG Balingen score at least one goal?",
+          "Y",
+          "1,32",
+          "N",
+          "2,80"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,10",
+          "X",
+          "3,10",
+          "2",
+          "2,90"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,50",
+          "X",
+          "2,15",
+          "2",
+          "3,90"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,10",
+          "X",
+          "3,10",
+          "2",
+          "2,90"
+        ]
+      ]
+    },
+    {
+      "home": "Astoria Walldorf",
+      "visitant": "Kickers Offenbach",
+      "home_odd": "3,60",
+      "draw_odd": null,
+      "visitant_odd": "3,60",
+      "debug": [
+        "14:00",
+        "Astoria Walldorf",
+        "Kickers Offenbach",
+        "3,60",
+        "3,60",
+        "1,85",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,80",
+          "12",
+          "1,22",
+          "X2",
+          "1,22"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,42",
+          "12",
+          "1,47",
+          "X2",
+          "1,15"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,80",
+          "X",
+          "3,90",
+          "2",
+          "3,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "6,50",
+          "X",
+          "5,20",
+          "2",
+          "1,22"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "2,80",
+          "2",
+          "1,37"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,25",
+          "X",
+          "17",
+          "2",
+          "1,60"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,90",
+          "X",
+          "2,25",
+          "2",
+          "2,35"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,80",
+          "X",
+          "3,90",
+          "2",
+          "3,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "6,50",
+          "X",
+          "5,20",
+          "2",
+          "1,22"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,50",
+          "-",
+          "2,40"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,15",
+          "-",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,25",
+          "X",
+          "17",
+          "2",
+          "1,60"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,45",
+          "N",
+          "2,55"
+        ],
+        [
+          "Does Astoria Walldorf score at least one goal?",
+          "Y",
+          "1,25",
+          "N",
+          "3,10"
+        ],
+        [
+          "Does Kickers Offenbach score at least one goal?",
+          "Y",
+          "1,11",
+          "N",
+          "4,70"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,80",
+          "X",
+          "3,60",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,90",
+          "X",
+          "2,25",
+          "2",
+          "2,35"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,80",
+          "X",
+          "3,60",
+          "2",
+          "2,00"
+        ]
+      ]
+    },
+    {
+      "home": "SV Elversberg 07",
+      "visitant": "Wormatia Worms",
+      "home_odd": "1,50",
+      "draw_odd": null,
+      "visitant_odd": "4,20",
+      "debug": [
+        "14:00",
+        "SV Elversberg 07",
+        "Wormatia Worms",
+        "1,50",
+        "4,20",
+        "5,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,11",
+          "12",
+          "1,15",
+          "X2",
+          "2,30"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,06",
+          "12",
+          "1,45",
+          "X2",
+          "1,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,35",
+          "X",
+          "3,50",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,20",
+          "X",
+          "4,10",
+          "2",
+          "1,42"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,17",
+          "2",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,60",
+          "-",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,18",
+          "-",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,30",
+          "-",
+          "1,18"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,40",
+          "X",
+          "15",
+          "2",
+          "2,90"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,95",
+          "X",
+          "2,30",
+          "2",
+          "5,50"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,35",
+          "X",
+          "3,50",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,20",
+          "X",
+          "4,10",
+          "2",
+          "1,42"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,60",
+          "-",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,18",
+          "-",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,30",
+          "-",
+          "1,18"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,40",
+          "X",
+          "15",
+          "2",
+          "2,90"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Does SV Elversberg 07 score at least one goal?",
+          "Y",
+          "1,08",
+          "N",
+          "5,50"
+        ],
+        [
+          "Does Wormatia Worms score at least one goal?",
+          "Y",
+          "1,47",
+          "N",
+          "2,30"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,30",
+          "2",
+          "3,70"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,50",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,30",
+          "-",
+          "1,55"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,95",
+          "X",
+          "2,30",
+          "2",
+          "5,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,30",
+          "2",
+          "3,70"
+        ]
+      ]
+    },
+    {
+      "home": "FSV Frankfurt",
+      "visitant": "Eintracht Stadtallendorf",
+      "home_odd": "1,90",
+      "draw_odd": null,
+      "visitant_odd": "3,50",
+      "debug": [
+        "14:30",
+        "FSV Frankfurt",
+        "Eintracht Stadtallendorf",
+        "1,90",
+        "3,50",
+        "3,50",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,22",
+          "12",
+          "1,22",
+          "X2",
+          "1,75"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,15",
+          "12",
+          "1,47",
+          "X2",
+          "1,40"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,20",
+          "X",
+          "3,80",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,22",
+          "X",
+          "5,00",
+          "2",
+          "6,50"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,40",
+          "2",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,17",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "15",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,47",
+          "N",
+          "2,50"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,20",
+          "2",
+          "3,80"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,20",
+          "X",
+          "3,80",
+          "2",
+          "1,75"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,22",
+          "X",
+          "5,00",
+          "2",
+          "6,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,17",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,60",
+          "X",
+          "15",
+          "2",
+          "2,25"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,47",
+          "N",
+          "2,50"
+        ],
+        [
+          "Does FSV Frankfurt score at least one goal?",
+          "Y",
+          "1,12",
+          "N",
+          "4,50"
+        ],
+        [
+          "Does Eintracht Stadtallendorf score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,10"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,00",
+          "X",
+          "3,40",
+          "2",
+          "2,80"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,25",
+          "-",
+          "1,58"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,40",
+          "X",
+          "2,20",
+          "2",
+          "3,80"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,00",
+          "X",
+          "3,40",
+          "2",
+          "2,80"
+        ]
+      ]
+    },
+    {
+      "home": "SC Hessen Dreieich",
+      "visitant": "TSV Steinbach",
+      "home_odd": "3,00",
+      "draw_odd": null,
+      "visitant_odd": "3,30",
+      "debug": [
+        "09:00",
+        "SC Hessen Dreieich",
+        "TSV Steinbach",
+        "3,00",
+        "3,30",
+        "2,15",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,57",
+          "12",
+          "1,25",
+          "X2",
+          "1,30"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,32",
+          "12",
+          "1,52",
+          "X2",
+          "1,20"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,57",
+          "X",
+          "3,80",
+          "2",
+          "4,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,70",
+          "X",
+          "4,40",
+          "2",
+          "1,30"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "2,25",
+          "2",
+          "1,58"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,10",
+          "X",
+          "12,50",
+          "2",
+          "1,75"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,50",
+          "X",
+          "2,15",
+          "2",
+          "2,70"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,57",
+          "X",
+          "3,80",
+          "2",
+          "4,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,70",
+          "X",
+          "4,40",
+          "2",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,10",
+          "X",
+          "12,50",
+          "2",
+          "1,75"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Does SC Hessen Dreieich score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,10"
+        ],
+        [
+          "Does TSV Steinbach score at least one goal?",
+          "Y",
+          "1,18",
+          "N",
+          "3,80"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,70",
+          "X",
+          "3,10",
+          "2",
+          "2,25"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,50",
+          "X",
+          "2,15",
+          "2",
+          "2,70"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,70",
+          "X",
+          "3,10",
+          "2",
+          "2,25"
+        ]
+      ]
+    },
+    {
+      "home": "TSG Hoffenheim II",
+      "visitant": "SV Waldhof Mannheim",
+      "home_odd": "3,30",
+      "draw_odd": null,
+      "visitant_odd": "3,40",
+      "debug": [
+        "09:00",
+        "TSG Hoffenheim II",
+        "SV Waldhof Mannheim",
+        "3,30",
+        "3,40",
+        "2,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,65",
+          "12",
+          "1,25",
+          "X2",
+          "1,25"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,37",
+          "12",
+          "1,50",
+          "X2",
+          "1,16"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,65",
+          "X",
+          "3,70",
+          "2",
+          "3,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "6,50",
+          "X",
+          "4,70",
+          "2",
+          "1,25"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "2,50",
+          "2",
+          "1,47"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,20",
+          "X",
+          "12,50",
+          "2",
+          "1,65"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,80",
+          "X",
+          "2,15",
+          "2",
+          "2,50"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,65",
+          "X",
+          "3,70",
+          "2",
+          "3,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "6,50",
+          "X",
+          "4,70",
+          "2",
+          "1,25"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,20",
+          "X",
+          "12,50",
+          "2",
+          "1,65"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Does TSG Hoffenheim II score at least one goal?",
+          "Y",
+          "1,32",
+          "N",
+          "2,90"
+        ],
+        [
+          "Does SV Waldhof Mannheim score at least one goal?",
+          "Y",
+          "1,16",
+          "N",
+          "4,10"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,90",
+          "X",
+          "3,10",
+          "2",
+          "2,15"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,80",
+          "X",
+          "2,15",
+          "2",
+          "2,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,90",
+          "X",
+          "3,10",
+          "2",
+          "2,15"
+        ]
+      ]
+    },
+    {
+      "home": "FSV Mainz 05 II",
+      "visitant": "FK Pirmasens",
+      "home_odd": "2,20",
+      "draw_odd": null,
+      "visitant_odd": "3,30",
+      "debug": [
+        "09:00",
+        "FSV Mainz 05 II",
+        "FK Pirmasens",
+        "2,20",
+        "3,30",
+        "2,90",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,32",
+          "12",
+          "1,25",
+          "X2",
+          "1,55"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,20",
+          "12",
+          "1,55",
+          "X2",
+          "1,32"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "4,10",
+          "X",
+          "3,70",
+          "2",
+          "1,55"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,30",
+          "2",
+          "5,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,60",
+          "2",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,80",
+          "-",
+          "1,37"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,00",
+          "-",
+          "1,13"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "12",
+          "2",
+          "2,10"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,75",
+          "X",
+          "2,10",
+          "2",
+          "3,50"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "4,10",
+          "X",
+          "3,70",
+          "2",
+          "1,55"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,30",
+          "2",
+          "5,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,80",
+          "-",
+          "1,37"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,00",
+          "-",
+          "1,13"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,75",
+          "X",
+          "12",
+          "2",
+          "2,10"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,60",
+          "N",
+          "2,20"
+        ],
+        [
+          "Does FSV Mainz 05 II score at least one goal?",
+          "Y",
+          "1,20",
+          "N",
+          "3,70"
+        ],
+        [
+          "Does FK Pirmasens score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,25",
+          "X",
+          "2,90",
+          "2",
+          "2,75"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,35",
+          "-",
+          "2,90"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,75",
+          "X",
+          "2,10",
+          "2",
+          "3,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,25",
+          "X",
+          "2,90",
+          "2",
+          "2,75"
+        ]
+      ]
+    },
+    {
+      "home": "Werder Bremen II",
+      "visitant": "Hamburger SV II",
+      "home_odd": "2,45",
+      "draw_odd": null,
+      "visitant_odd": "3,30",
+      "debug": [
+        "14:00",
+        "Werder Bremen II",
+        "Hamburger SV II",
+        "2,45",
+        "3,30",
+        "2,55",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,40",
+          "12",
+          "1,25",
+          "X2",
+          "1,45"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,22",
+          "12",
+          "1,55",
+          "X2",
+          "1,25"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "3,90",
+          "2",
+          "1,45"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,40",
+          "X",
+          "4,00",
+          "2",
+          "4,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,80",
+          "2",
+          "1,90"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,85",
+          "-",
+          "1,85"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,10",
+          "-",
+          "1,32"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,85",
+          "X",
+          "10,50",
+          "2",
+          "2,00"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,00",
+          "X",
+          "2,05",
+          "2",
+          "3,20"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "3,90",
+          "2",
+          "1,45"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,40",
+          "X",
+          "4,00",
+          "2",
+          "4,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,85",
+          "-",
+          "1,85"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,10",
+          "-",
+          "1,32"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,85",
+          "X",
+          "10,50",
+          "2",
+          "2,00"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Does Werder Bremen II score at least one goal?",
+          "Y",
+          "1,25",
+          "N",
+          "3,30"
+        ],
+        [
+          "Does Hamburger SV II score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,10"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,45",
+          "X",
+          "2,80",
+          "2",
+          "2,65"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,30",
+          "2",
+          "2,05"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,30",
+          "2",
+          "2,05"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,55",
+          "-",
+          "1,45"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,37",
+          "-",
+          "2,80"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,00",
+          "X",
+          "2,05",
+          "2",
+          "3,20"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,45",
+          "X",
+          "2,80",
+          "2",
+          "2,65"
+        ]
+      ]
+    },
+    {
+      "home": "Hannover 96 II",
+      "visitant": "SV Drochtersen/Assel",
+      "home_odd": "2,30",
+      "draw_odd": null,
+      "visitant_odd": "3,00",
+      "debug": [
+        "08:00",
+        "Hannover 96 II",
+        "SV Drochtersen/Assel",
+        "2,30",
+        "3,00",
+        "3,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,30",
+          "12",
+          "1,30",
+          "X2",
+          "1,50"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,17",
+          "12",
+          "1,65",
+          "X2",
+          "1,27"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "3,60",
+          "2",
+          "1,50"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,30",
+          "X",
+          "4,00",
+          "2",
+          "6,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,60",
+          "2",
+          "2,20"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,40",
+          "-",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "7,00",
+          "-",
+          "1,07"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,80",
+          "X",
+          "8,00",
+          "2",
+          "2,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,85",
+          "N",
+          "1,85"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,90",
+          "X",
+          "1,95",
+          "2",
+          "3,70"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "3,60",
+          "2",
+          "1,50"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,30",
+          "X",
+          "4,00",
+          "2",
+          "6,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,40",
+          "-",
+          "2,70"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,80",
+          "-",
+          "1,22"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "7,00",
+          "-",
+          "1,07"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,80",
+          "X",
+          "8,00",
+          "2",
+          "2,20"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,85",
+          "N",
+          "1,85"
+        ],
+        [
+          "Does Hannover 96 II score at least one goal?",
+          "Y",
+          "1,27",
+          "N",
+          "3,00"
+        ],
+        [
+          "Does SV Drochtersen/Assel score at least one goal?",
+          "Y",
+          "1,40",
+          "N",
+          "2,55"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,45",
+          "X",
+          "2,50",
+          "2",
+          "3,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,10",
+          "X",
+          "3,10",
+          "2",
+          "2,10"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,10",
+          "X",
+          "3,10",
+          "2",
+          "2,10"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,90",
+          "-",
+          "1,35"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,47",
+          "-",
+          "2,50"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,90",
+          "X",
+          "1,95",
+          "2",
+          "3,70"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,45",
+          "X",
+          "2,50",
+          "2",
+          "3,00"
+        ]
+      ]
+    },
+    {
+      "home": "VfB Lubeck",
+      "visitant": "SSV Jeddeloh",
+      "home_odd": "1,50",
+      "draw_odd": null,
+      "visitant_odd": "4,30",
+      "debug": [
+        "09:00",
+        "VfB Lubeck",
+        "SSV Jeddeloh",
+        "1,50",
+        "4,30",
+        "5,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,11",
+          "12",
+          "1,15",
+          "X2",
+          "2,30"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,06",
+          "12",
+          "1,45",
+          "X2",
+          "1,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,30",
+          "X",
+          "3,60",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,10",
+          "X",
+          "4,20",
+          "2",
+          "1,45"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,18",
+          "2",
+          "4,30"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,16",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,40",
+          "X",
+          "16",
+          "2",
+          "2,80"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,95",
+          "X",
+          "2,30",
+          "2",
+          "5,50"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "2,30",
+          "X",
+          "3,60",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (0:2)",
+          "1",
+          "4,10",
+          "X",
+          "4,20",
+          "2",
+          "1,45"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,55",
+          "-",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,16",
+          "-",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,35",
+          "-",
+          "1,52"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,00",
+          "-",
+          "1,20"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,40",
+          "X",
+          "16",
+          "2",
+          "2,80"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Does VfB Lubeck score at least one goal?",
+          "Y",
+          "1,07",
+          "N",
+          "5,70"
+        ],
+        [
+          "Does SSV Jeddeloh score at least one goal?",
+          "Y",
+          "1,45",
+          "N",
+          "2,35"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,40",
+          "2",
+          "3,60"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "2,90",
+          "X",
+          "3,60",
+          "2",
+          "1,95"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,20",
+          "-",
+          "1,60"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,27",
+          "-",
+          "3,40"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "1,95",
+          "X",
+          "2,30",
+          "2",
+          "5,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "1,75",
+          "X",
+          "3,40",
+          "2",
+          "3,60"
+        ]
+      ]
+    },
+    {
+      "home": "BSV Rehden",
+      "visitant": "TSV Havelse",
+      "home_odd": "2,10",
+      "draw_odd": null,
+      "visitant_odd": "3,50",
+      "debug": [
+        "09:00",
+        "BSV Rehden",
+        "TSV Havelse",
+        "2,10",
+        "3,50",
+        "3,00",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,32",
+          "12",
+          "1,22",
+          "X2",
+          "1,60"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,18",
+          "12",
+          "1,50",
+          "X2",
+          "1,35"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,90",
+          "X",
+          "3,80",
+          "2",
+          "1,60"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,50",
+          "2",
+          "5,70"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,55",
+          "2",
+          "2,30"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,70",
+          "X",
+          "12,50",
+          "2",
+          "2,15"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,60",
+          "X",
+          "2,15",
+          "2",
+          "3,60"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,90",
+          "X",
+          "3,80",
+          "2",
+          "1,60"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,32",
+          "X",
+          "4,50",
+          "2",
+          "5,70"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,70",
+          "-",
+          "2,00"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,22",
+          "-",
+          "3,80"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,70",
+          "-",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "4,70",
+          "-",
+          "1,15"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,70",
+          "X",
+          "12,50",
+          "2",
+          "2,15"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,58",
+          "N",
+          "2,25"
+        ],
+        [
+          "Does BSV Rehden score at least one goal?",
+          "Y",
+          "1,17",
+          "N",
+          "3,90"
+        ],
+        [
+          "Does TSV Havelse score at least one goal?",
+          "Y",
+          "1,30",
+          "N",
+          "3,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "3,10",
+          "2",
+          "2,80"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,40",
+          "-",
+          "1,50"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,32",
+          "-",
+          "3,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,60",
+          "X",
+          "2,15",
+          "2",
+          "3,60"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "3,10",
+          "2",
+          "2,80"
+        ]
+      ]
+    },
+    {
+      "home": "FC St. Pauli II",
+      "visitant": "Etsv Weiche Flensburg",
+      "home_odd": "4,00",
+      "draw_odd": null,
+      "visitant_odd": "3,60",
+      "debug": [
+        "09:00",
+        "FC St. Pauli II",
+        "Etsv Weiche Flensburg",
+        "4,00",
+        "3,60",
+        "1,75",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,90",
+          "12",
+          "1,22",
+          "X2",
+          "1,18"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,45",
+          "12",
+          "1,50",
+          "X2",
+          "1,10"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,90",
+          "X",
+          "3,40",
+          "2",
+          "3,10"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,50",
+          "2",
+          "6,20"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "3,20",
+          "2",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,80",
+          "-",
+          "1,37"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,00",
+          "-",
+          "1,13"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,50",
+          "X",
+          "12",
+          "2",
+          "1,55"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "4,50",
+          "X",
+          "2,15",
+          "2",
+          "2,25"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,90",
+          "X",
+          "3,40",
+          "2",
+          "3,10"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,50",
+          "2",
+          "6,20"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,75",
+          "-",
+          "1,95"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,80",
+          "-",
+          "1,37"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,00",
+          "-",
+          "1,13"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,50",
+          "X",
+          "12",
+          "2",
+          "1,55"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Does FC St. Pauli II score at least one goal?",
+          "Y",
+          "1,42",
+          "N",
+          "2,45"
+        ],
+        [
+          "Does Etsv Weiche Flensburg score at least one goal?",
+          "Y",
+          "1,13",
+          "N",
+          "4,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,30",
+          "X",
+          "2,90",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,40",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,50",
+          "-",
+          "1,47"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,35",
+          "-",
+          "2,90"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "4,50",
+          "X",
+          "2,15",
+          "2",
+          "2,25"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,30",
+          "X",
+          "2,90",
+          "2",
+          "2,00"
+        ]
+      ]
+    },
+    {
+      "home": "1.FC Germania E/L",
+      "visitant": "Hansa Luneburg",
+      "home_odd": "2,00",
+      "draw_odd": null,
+      "visitant_odd": "3,30",
+      "debug": [
+        "10:00",
+        "1.FC Germania E/L",
+        "Hansa Luneburg",
+        "2,00",
+        "3,30",
+        "3,40",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,25",
+          "12",
+          "1,25",
+          "X2",
+          "1,65"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,14",
+          "12",
+          "1,55",
+          "X2",
+          "1,35"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,80",
+          "X",
+          "3,50",
+          "2",
+          "1,65"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "7,00"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,45",
+          "2",
+          "2,55"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,90",
+          "-",
+          "1,80"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,65",
+          "X",
+          "10",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,70",
+          "N",
+          "2,00"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,55",
+          "X",
+          "2,05",
+          "2",
+          "4,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "3,80",
+          "X",
+          "3,50",
+          "2",
+          "1,65"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,25",
+          "X",
+          "4,70",
+          "2",
+          "7,00"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,90",
+          "-",
+          "1,80"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "1,65",
+          "X",
+          "10",
+          "2",
+          "2,30"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,70",
+          "N",
+          "2,00"
+        ],
+        [
+          "Does 1.FC Germania E/L score at least one goal?",
+          "Y",
+          "1,18",
+          "N",
+          "3,70"
+        ],
+        [
+          "Does Hansa Luneburg score at least one goal?",
+          "Y",
+          "1,37",
+          "N",
+          "2,55"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "2,80",
+          "2",
+          "3,10"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,05"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,05"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,37",
+          "-",
+          "2,80"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "2,55",
+          "X",
+          "2,05",
+          "2",
+          "4,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,20",
+          "X",
+          "2,80",
+          "2",
+          "3,10"
+        ]
+      ]
+    },
+    {
+      "home": "U. L. M. Wolfsburg",
+      "visitant": "VfB Oldenburg",
+      "home_odd": "2,60",
+      "draw_odd": null,
+      "visitant_odd": "3,30",
+      "debug": [
+        "10:00",
+        "U. L. M. Wolfsburg",
+        "VfB Oldenburg",
+        "2,60",
+        "3,30",
+        "2,40",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,45",
+          "12",
+          "1,25",
+          "X2",
+          "1,40"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,27",
+          "12",
+          "1,57",
+          "X2",
+          "1,22"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,45",
+          "X",
+          "3,80",
+          "2",
+          "5,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "4,10",
+          "2",
+          "1,40"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "1,95",
+          "2",
+          "1,75"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,90",
+          "-",
+          "1,80"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,05",
+          "X",
+          "10",
+          "2",
+          "1,85"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,30",
+          "X",
+          "2,05",
+          "2",
+          "3,00"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "1,45",
+          "X",
+          "3,80",
+          "2",
+          "5,00"
+        ],
+        [
+          "Handicap (0:1)",
+          "1",
+          "5,00",
+          "X",
+          "4,10",
+          "2",
+          "1,40"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,90",
+          "-",
+          "1,80"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,28",
+          "-",
+          "3,30"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "3,20",
+          "-",
+          "1,30"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,50",
+          "-",
+          "1,11"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,05",
+          "X",
+          "10",
+          "2",
+          "1,85"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,65",
+          "N",
+          "2,10"
+        ],
+        [
+          "Does U. L. M. Wolfsburg score at least one goal?",
+          "Y",
+          "1,30",
+          "N",
+          "3,00"
+        ],
+        [
+          "Does VfB Oldenburg score at least one goal?",
+          "Y",
+          "1,25",
+          "N",
+          "3,30"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,70",
+          "X",
+          "2,70",
+          "2",
+          "2,45"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,05"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,20",
+          "2",
+          "2,05"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,65",
+          "-",
+          "1,42"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,40",
+          "-",
+          "2,70"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "3,30",
+          "X",
+          "2,05",
+          "2",
+          "3,00"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "2,70",
+          "X",
+          "2,70",
+          "2",
+          "2,45"
+        ]
+      ]
+    },
+    {
+      "home": "Kieler SV Holstein II",
+      "visitant": "VfL Wolfsburg II",
+      "home_odd": "4,50",
+      "draw_odd": null,
+      "visitant_odd": "3,60",
+      "debug": [
+        "10:00",
+        "Kieler SV Holstein II",
+        "VfL Wolfsburg II",
+        "4,50",
+        "3,60",
+        "1,65",
+        "  LIVE",
+        "+18"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "2,00",
+          "12",
+          "1,20",
+          "X2",
+          "1,13"
+        ],
+        [
+          "Double chance First Half",
+          "1X",
+          "1,50",
+          "12",
+          "1,50",
+          "X2",
+          "1,08"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "2,00",
+          "X",
+          "3,30",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,30",
+          "X",
+          "4,20",
+          "2",
+          "4,50"
+        ],
+        [
+          "Draw no bet",
+          "1",
+          "3,80",
+          "2",
+          "1,22"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,80",
+          "-",
+          "1,90"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,90",
+          "-",
+          "1,35"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,30",
+          "-",
+          "1,12"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,70",
+          "X",
+          "11,50",
+          "2",
+          "1,50"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,75",
+          "N",
+          "1,95"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "5,00",
+          "X",
+          "2,15",
+          "2",
+          "2,15"
+        ],
+        [
+          "Handicap (1:0)",
+          "1",
+          "2,00",
+          "X",
+          "3,30",
+          "2",
+          "2,30"
+        ],
+        [
+          "Handicap (2:0)",
+          "1",
+          "1,30",
+          "X",
+          "4,20",
+          "2",
+          "4,50"
+        ],
+        [
+          "Over/Under bet (2,5)",
+          "+",
+          "1,80",
+          "-",
+          "1,90"
+        ],
+        [
+          "Over/Under bet (1,5)",
+          "+",
+          "1,25",
+          "-",
+          "3,60"
+        ],
+        [
+          "Over/Under bet (3,5)",
+          "+",
+          "2,90",
+          "-",
+          "1,35"
+        ],
+        [
+          "Over/Under bet (4,5)",
+          "+",
+          "5,30",
+          "-",
+          "1,12"
+        ],
+        [
+          "Which team will score first?",
+          "1",
+          "2,70",
+          "X",
+          "11,50",
+          "2",
+          "1,50"
+        ],
+        [
+          "Both teams to score?",
+          "Y",
+          "1,75",
+          "N",
+          "1,95"
+        ],
+        [
+          "Does Kieler SV Holstein II score at least one goal?",
+          "Y",
+          "1,47",
+          "N",
+          "2,30"
+        ],
+        [
+          "Does VfL Wolfsburg II score at least one goal?",
+          "Y",
+          "1,12",
+          "N",
+          "4,50"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,50",
+          "X",
+          "2,90",
+          "2",
+          "1,95"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,30",
+          "2",
+          "2,00"
+        ],
+        [
+          "Highest scoring half?",
+          "1",
+          "3,00",
+          "X",
+          "3,30",
+          "2",
+          "2,00"
+        ],
+        [
+          "1.half Over/Under bet (1,5)",
+          "+",
+          "2,55",
+          "-",
+          "1,45"
+        ],
+        [
+          "1.half Over/Under bet (0,5)",
+          "+",
+          "1,35",
+          "-",
+          "2,90"
+        ],
+        [
+          "Who wins the 1.half?",
+          "1",
+          "5,00",
+          "X",
+          "2,15",
+          "2",
+          "2,15"
+        ],
+        [
+          "Who scores first in the 1st half?",
+          "1",
+          "3,50",
+          "X",
+          "2,90",
+          "2",
+          "1,95"
+        ]
+      ]
+    },
+    {
+      "home": "VfL Oldenburg",
+      "visitant": "Eintracht Norderstedt",
+      "home_odd": "4,00",
+      "draw_odd": null,
+      "visitant_odd": "3,70",
+      "debug": [
+        "10:00",
+        "VfL Oldenburg",
+        "Eintracht Norderstedt",
+        "4,00",
+        "3,70",
+        "1,65",
+        "  LIVE",
+        "+1"
+      ],
+      "scout_rows": [
+        [
+          "Double chance",
+          "1X",
+          "1,90",
+          "12",
+          "1,17",
+          "X2",
+          "1,14"
+        ]
+      ]
+    }
+  ],
+  "url": "https://www.rivalo.com/en/sportsbook/football-germany-amateur/gbcccab/"
+}
