@@ -6,7 +6,7 @@ con = psycopg2.connect(host='172.17.0.2', database='bet-data-dev',
 
 cur = con.cursor()
 
-sql = "create table aposta_bet (id serial primary key, casa varchar(100), visitante varchar(100)," \
+sql = "create table aposta_bet (id serial primary key, casa varchar(101), visitante varchar(100)," \
     "casa_odd varchar(20), empate_odd varchar(20), visitante_odd varchar(20), debug varchar(900))"
 cur.execute(sql)
 

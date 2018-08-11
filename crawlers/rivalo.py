@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from multiprocessing import Pool
 import re
+import psycopg2
 import time
 import asyncio
 
@@ -265,7 +266,8 @@ def instance_browser():
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("no-sandbox")
-    return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver',chrome_options=chrome_options)
+    # return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
+    return webdriver.Chrome(chrome_options=chrome_options)
 
 
 def main_page(browser, main_url):
@@ -339,6 +341,10 @@ mercado_list = [
 def running_crawler(league_url, current_item, total_items):
     rivalo = []
     camp_name = str(current_item)
+    con = psycopg2.connect(host='0.0.0.0', database='bet-crawlers',
+                           user='postgres', password='betcrawlers@321', port='1234')
+    cur = con.cursor()
+
     try:
         browser = instance_browser()
         browser.set_page_load_timeout(60)
@@ -387,11 +393,6 @@ def running_crawler(league_url, current_item, total_items):
             mercado_nome = None
             poss_nome = None
             poss_valor = None
-
-            evento["esporte_nome"] = esp_name
-            evento["liga_nome"] = league_name
-            evento["campeonato_nome"] = camp_name
-            evento["camp_url"] = league_url
 
             match_class = match.get_attribute("class")
             m = re.match("(t_space)", match_class)
@@ -447,15 +448,30 @@ def running_crawler(league_url, current_item, total_items):
             print('Data :', current_date)
             print('Hora :', current_hour)
 
+            evento["esporte_nome"] = esp_name
+            evento["liga_nome"] = league_name
+            evento["campeonato_nome"] = camp_name
+            evento["camp_url"] = league_url
+
             evento["data"] = current_date
             evento["hora"] = current_hour
 
+            evento["nome"] = event_name
             evento["casa"] = home
             evento["visitante"] = visitant
 
             evento["casa_odd"] = home_odd
             evento["empate_odd"] = draw_odd
             evento["visitante_odd"] = visitant_odd
+
+            print("Saving event")
+            sql = "insert into rivalo_eventos values (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, default) RETURNING id"
+            cur.execute(sql, (esp_name, league_name, camp_name,
+                              league_url, current_date, current_hour, event_name,
+                              home, visitant, home_odd, draw_odd, visitant_odd))
+            con.commit()
+            evento_id = cur.fetchone()[0]
+            print(evento_id)
 
             load_scout = None
             try:
@@ -495,20 +511,38 @@ def running_crawler(league_url, current_item, total_items):
                         if len(poss_list) == 6:
                             mercado["poss_nome_1"] = poss_list[0] + \
                                 " " + poss_list[1]
-                            mercado["poss_odd_1"] = poss_list[1]
+                            mercado["poss_valor_1"] = poss_list[1]
                             mercado["poss_nome_2"] = poss_list[2] + \
                                 " " + poss_list[3]
-                            mercado["poss_odd_2"] = poss_list[3]
+                            mercado["poss_valor_2"] = poss_list[3]
                             mercado["poss_nome_3"] = poss_list[4] + \
                                 " " + poss_list[5]
-                            mercado["poss_odd_3"] = poss_list[5]
+                            mercado["poss_valor_3"] = poss_list[5]
                         else:
                             mercado["poss_nome_1"] = poss_list[0] + \
                                 " " + poss_list[1]
-                            mercado["poss_odd_1"] = poss_list[1]
+                            mercado["poss_valor_1"] = poss_list[1]
                             mercado["poss_nome_2"] = poss_list[2] + \
                                 " " + poss_list[3]
-                            mercado["poss_odd_2"] = poss_list[3]
+                            mercado["poss_valor_2"] = poss_list[3]
+
+                            mercado["poss_nome_3"] = None
+                            mercado["poss_valor_3"] = None
+
+                        mercado_nome = mercado["mercado_nome"]
+                        poss_nome_1 = mercado["poss_nome_1"]
+                        poss_valor_1 = mercado["poss_valor_1"]
+                        poss_nome_2 = mercado["poss_nome_2"]
+                        poss_valor_2 = mercado["poss_valor_2"]
+                        poss_nome_3 = mercado["poss_nome_3"]
+                        poss_valor_3 = mercado["poss_valor_3"]
+
+                        sql = "insert into rivalo_mercados values (default, %s, %s, %s, %s, %s, %s, %s, %s, default)"
+                        cur.execute(sql, (evento_id, mercado_nome,
+                                          poss_nome_1, poss_valor_1,
+                                          poss_nome_2, poss_valor_2,
+                                          poss_nome_3, poss_valor_3))
+                        con.commit()
                         break
 
                 data["evento"] = evento
@@ -525,8 +559,10 @@ def running_crawler(league_url, current_item, total_items):
         print(e)
         print("crawler broken: ", league_url)
     finally:
-        print("WRITE")
-        write_file(camp_name, rivalo)
+        # print("WRITE")
+        # write_file(camp_name, rivalo)
+        print("DONE")
+        con.close()
         browser.close()
 
 
@@ -535,11 +571,12 @@ if __name__ == '__main__':
     # urls = get_leagues_list()
     # write_file("_league", urls)
     # print("Escreveu")
+
     print("Start")
 
     while True:
         pool = Pool(processes=4)
-        urls = [
+        # urls = [
             # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
             # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
             # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -550,10 +587,10 @@ if __name__ == '__main__':
             # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
             # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
             # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-            "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
-            "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
-        ]
+        #     "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+        #     "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+        #     "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+        # ]
         pool_list = []
         urls_len = len(urls)
         for idx, item in enumerate(urls):
@@ -564,24 +601,4 @@ if __name__ == '__main__':
 
         time.sleep(1)
 
-
-    # while True:
-    #     loop = asyncio.get_event_loop()
-    #     for i in range(3):
-    #         future = asyncio.ensure_future(running_crawler(urls[0], 1, urls_len))
-    #         loop.run_until_complete(future)
-    #     print('finish')
-    #     time.sleep(2)
-    # print("Pools :", len(pool_list))
-    # while True:
-    #     # for idx, item in enumerate(urls):
-    #     pool.apply_async(running_crawler, (urls[0], 1, urls_len))
-    #     time.sleep(1)
-    #     pool.close()
-    #     pool.join()
-    #     print("Running")
-    # while True:
-    #     print("Running")
-        # [x.get() for x in pool_list]
-    # running_crawler(urls[0], 0, 1)
     print("--- %s seconds ---" % (time.time() - start_time))
