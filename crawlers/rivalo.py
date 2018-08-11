@@ -5,179 +5,268 @@ from multiprocessing import Pool
 import re
 import time
 
-all_urls = [
-  "https://www.rivalo.com/en/sportsbook/football/gbbab/",
-  "https://www.rivalo.com/en/sportsbook/football/gbbab/",
-  "https://www.rivalo.com/en/sportsbook/football-brazil/gbdcab/",
-  "https://www.rivalo.com/en/sportsbook/football-international-clubs/gdjdcab/",
-  "https://www.rivalo.com/en/sportsbook/football-europa-league/ggiajba/",
-  "https://www.rivalo.com/en/sportsbook/football-champions-league/ggiaiba/",
-  "https://www.rivalo.com/en/sportsbook/football-mexico/gbccab/",
-  "https://www.rivalo.com/en/sportsbook/football-china/gjjcab/",
-  "https://www.rivalo.com/en/sportsbook/football-peru/gcacab/",
-  "https://www.rivalo.com/en/sportsbook/football-bolivia/gdhjcab/",
-  "https://www.rivalo.com/en/sportsbook/football-colombia/gchecab/",
-  "https://www.rivalo.com/en/sportsbook/football-japan/gfccab/",
-  "https://www.rivalo.com/en/sportsbook/football-australia/gdecab/",
-  "https://www.rivalo.com/en/sportsbook/football-russia/gcbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-international-youth/gdjccab/",
-  "https://www.rivalo.com/en/sportsbook/football-iceland/gbacab/",
-  "https://www.rivalo.com/en/sportsbook/football-germany/gdacab/",
-  "https://www.rivalo.com/en/sportsbook/football-austria/gbhcab/",
-  "https://www.rivalo.com/en/sportsbook/football-england/gbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-spain/gdccab/",
-  "https://www.rivalo.com/en/sportsbook/football-italy/gdbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-france/ghcab/",
-  "https://www.rivalo.com/en/sportsbook/football-turkey/gegcab/",
-  "https://www.rivalo.com/en/sportsbook/football-germany-amateur/gbcccab/",
-  "https://www.rivalo.com/en/sportsbook/football-portugal/geecab/",
-  "https://www.rivalo.com/en/sportsbook/football-denmark/gicab/",
-  "https://www.rivalo.com/en/sportsbook/football-switzerland/gcfcab/",
-  "https://www.rivalo.com/en/sportsbook/football-uefa-nations-league/gbjahgba/",
-  "https://www.rivalo.com/en/sportsbook/football-sweden/gjcab/",
-  "https://www.rivalo.com/en/sportsbook/football-netherlands/gdfcab/",
-  "https://www.rivalo.com/en/sportsbook/football-belgium/gddcab/",
-  "https://www.rivalo.com/en/sportsbook/football-norway/gfcab/",
-  "https://www.rivalo.com/en/sportsbook/football-scotland/gcccab/",
-  "https://www.rivalo.com/en/sportsbook/football-argentina/geicab/",
-  "https://www.rivalo.com/en/sportsbook/football-croatia/gbecab/",
-  "https://www.rivalo.com/en/sportsbook/football-finland/gbjcab/",
-  "https://www.rivalo.com/en/sportsbook/football-usa/gcgcab/",
-  "https://www.rivalo.com/en/sportsbook/football-czech-republic/gbicab/",
-  "https://www.rivalo.com/en/sportsbook/football-slovenia/gcecab/",
-  "https://www.rivalo.com/en/sportsbook/football-montenegro/gdigcab/",
-  "https://www.rivalo.com/en/sportsbook/football-poland/gehcab/",
-  "https://www.rivalo.com/en/sportsbook/football-romania/ghhcab/",
-  "https://www.rivalo.com/en/sportsbook/football-bulgaria/ghicab/",
-  "https://www.rivalo.com/en/sportsbook/football-slovakia/gcdcab/",
-  "https://www.rivalo.com/en/sportsbook/football-ukraine/gigcab/",
-  "https://www.rivalo.com/en/sportsbook/football-hungary/gbbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-estonia/gjccab/",
-  "https://www.rivalo.com/en/sportsbook/football-lithuania/gbgacab/",
-  "https://www.rivalo.com/en/sportsbook/football-latvia/gbgdcab/",
-  "https://www.rivalo.com/en/sportsbook/football-ireland/gfbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-northern-ireland/gbdacab/",
-  "https://www.rivalo.com/en/sportsbook/football-serbia/gbfccab/",
-  "https://www.rivalo.com/en/sportsbook/football-wales/gbdbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-georgia/gchacab/",
-  "https://www.rivalo.com/en/sportsbook/football-costa-rica/gcijcab/",
-  "https://www.rivalo.com/en/sportsbook/football-chile/gejcab/",
-  "https://www.rivalo.com/en/sportsbook/football-ecuador/gbgfcab/",
-  "https://www.rivalo.com/en/sportsbook/football-paraguay/gciacab/",
-  "https://www.rivalo.com/en/sportsbook/football-uruguay/gfhcab/",
-  "https://www.rivalo.com/en/sportsbook/football-venezuela/gcibcab/",
-  "https://www.rivalo.com/en/sportsbook/football-south-korea/gcjbcab/",
-  "https://www.rivalo.com/en/sportsbook/football-iran/gdabcab/",
-  "https://www.rivalo.com/en/sportsbook/football-qatar/gdfdcab/",
-  "https://www.rivalo.com/en/sportsbook/football-south-africa/gdcccab/",
-  "https://www.rivalo.com/en/sportsbook/football-egypt/gdafcab/",
-  "https://www.rivalo.com/en/sportsbook/football-england-amateur/gcfccab/",
-  "https://www.rivalo.com/en/sportsbook/football-denmark-amateur/gjfcab/",
-  "https://www.rivalo.com/en/sportsbook/football-austria-amateur/gjhcab/",
-  "https://www.rivalo.com/en/sportsbook/football-norway-amateure/gjecab/",
-  "https://www.rivalo.com/en/sportsbook/football-finnland-amateure/gcahcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball/gcbab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-usa/gbfcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-germany/gbbbcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-international/gbadcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-turkey/gbbccab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-brazil/gcgdcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-australia/gbbdcab/",
-  "https://www.rivalo.com/en/sportsbook/basketball-new-zealand/gcfddba/",
-  "https://www.rivalo.com/en/sportsbook/basketball-venezuela/gfgeaba/",
-  "https://www.rivalo.com/en/sportsbook/basketball-dominican-rep/gbeciiba/",
-  "https://www.rivalo.com/en/sportsbook/basketball-bolivia/gbifbdba/",
-  "https://www.rivalo.com/en/sportsbook/tennis/gfbab/",
-  "https://www.rivalo.com/en/sportsbook/tennis/gfbab/",
-  "https://www.rivalo.com/en/sportsbook/tennis-atp/gdcab/",
-  "https://www.rivalo.com/en/sportsbook/tennis-wta/ggcab/",
-  "https://www.rivalo.com/en/sportsbook/tennis-challenger/ghccab/",
-  "https://www.rivalo.com/en/sportsbook/tennis-federation-cup/ghecab/",
-  "https://www.rivalo.com/en/sportsbook/tennis-davis-cup/ghgcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey/gebab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey/gebab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-germany/gebcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-usa/gdhcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-russia/gbabcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-international/gfgcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-austria/ggfcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-switzerland/gfecab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-finland/geacab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-sweden/gdjcab/",
-  "https://www.rivalo.com/en/sportsbook/ice-hockey-norway/gdicab/",
-  "https://www.rivalo.com/en/sportsbook/handball/ggbab/",
-  "https://www.rivalo.com/en/sportsbook/handball/ggbab/",
-  "https://www.rivalo.com/en/sportsbook/handball-germany/gfdcab/",
-  "https://www.rivalo.com/en/sportsbook/handball-international/ghdcab/",
-  "https://www.rivalo.com/en/sportsbook/handball-france/gbcbcab/",
-  "https://www.rivalo.com/en/sportsbook/handball-spain/ghbcab/",
-  "https://www.rivalo.com/en/sportsbook/handball-brazil/gbihhcba/",
-  "https://www.rivalo.com/en/sportsbook/volleyball/gcdbab/",
-  "https://www.rivalo.com/en/sportsbook/volleyball/gcdbab/",
-  "https://www.rivalo.com/en/sportsbook/volleyball-international/gbdgcab/",
-  "https://www.rivalo.com/en/sportsbook/baseball/gdbab/",
-  "https://www.rivalo.com/en/sportsbook/baseball-usa/gbgcab/",
-  "https://www.rivalo.com/en/sportsbook/baseball-mexico/gecgcab/",
-  "https://www.rivalo.com/en/sportsbook/motorsport/gbbbab/",
-  "https://www.rivalo.com/en/sportsbook/motorsport-formula-1/gdgcab/",
-  "https://www.rivalo.com/en/sportsbook/motorsport-bikes/gfacab/",
-  "https://www.rivalo.com/en/sportsbook/motorsport-nascar/gbfacab/",
-  "https://www.rivalo.com/en/sportsbook/motorsport-rally/giecab/",
-  "https://www.rivalo.com/en/sportsbook/boxing/gdiheddjgeehaigjbhid/",
-  "https://www.rivalo.com/en/sportsbook/boxing/gdiheddjgeehaigjbhid/",
-  "https://www.rivalo.com/en/sportsbook/boxing-free-fighting/gbbhba/",
-  "https://www.rivalo.com/en/sportsbook/boxing-international/gdiheebedhcejcbidbeh/",
-  "https://www.rivalo.com/en/sportsbook/darts/gccbab/",
-  "https://www.rivalo.com/en/sportsbook/darts-international/gbaecab/",
-  "https://www.rivalo.com/en/sportsbook/wc-2022/gcfjhifiiaccchbgccdg/",
-  "https://www.rivalo.com/en/sportsbook/wc-2022-outright-markets/gjaaaba/",
-  "https://www.rivalo.com/en/sportsbook/futsal/gcjbab/",
-  "https://www.rivalo.com/en/sportsbook/futsal-brazil/gcaccab/",
-  "https://www.rivalo.com/en/sportsbook/euro-2020/gjjdiba/",
-  "https://www.rivalo.com/en/sportsbook/euro-2020-outright-markets/gjjejba/",
-  "https://www.rivalo.com/en/sportsbook/cycling/gbhbab/",
-  "https://www.rivalo.com/en/sportsbook/cycling-vuelta-a-espana/gghebba/",
-  "https://www.rivalo.com/en/sportsbook/cycling-international/gjgcab/",
-  "https://www.rivalo.com/en/sportsbook/rugby/gbcbab/",
-  "https://www.rivalo.com/en/sportsbook/rugby-rugby-league/gidcab/",
-  "https://www.rivalo.com/en/sportsbook/rugby-rugby-union/giccab/",
-  "https://www.rivalo.com/en/sportsbook/snooker/gbjbab/",
-  "https://www.rivalo.com/en/sportsbook/snooker-international/gffcab/",
-  "https://www.rivalo.com/en/sportsbook/american-football/gbgbab/",
-  "https://www.rivalo.com/en/sportsbook/american-football-usa/gedcab/",
-  "https://www.rivalo.com/en/sportsbook/american-football-canada/gjdcab/",
-  "https://www.rivalo.com/en/sportsbook/athletics-european-championships-2018/gbifchba/",
-  "https://www.rivalo.com/en/sportsbook/athletics-european-championships-2018-men/gbifciba/",
-  "https://www.rivalo.com/en/sportsbook/athletics-european-championships-2018-women/gbifdbba/",
-  "https://www.rivalo.com/en/sportsbook/beach-volley/gdebab/",
-  "https://www.rivalo.com/en/sportsbook/beach-volley/gdebab/",
-  "https://www.rivalo.com/en/sportsbook/beach-volley-international/gcjacab/",
-  "https://www.rivalo.com/en/sportsbook/table-tennis/gcabab/",
-  "https://www.rivalo.com/en/sportsbook/table-tennis/gcabab/",
-  "https://www.rivalo.com/en/sportsbook/table-tennis-international/giicab/",
-  "https://www.rivalo.com/en/sportsbook/field-hockey/gcebab/",
-  "https://www.rivalo.com/en/sportsbook/field-hockey-international/gbggcab/",
-  "https://www.rivalo.com/en/sportsbook/aussie-rules/gbdbab/",
-  "https://www.rivalo.com/en/sportsbook/aussie-rules-australia/gihcab/",
-  "https://www.rivalo.com/en/sportsbook/pesapallo/ggbbab/",
-  "https://www.rivalo.com/en/sportsbook/pesapallo-finland/gfjhcab/",
-  "https://www.rivalo.com/en/sportsbook/badminton/gdbbab/",
-  "https://www.rivalo.com/en/sportsbook/badminton/gdbbab/",
-  "https://www.rivalo.com/en/sportsbook/badminton-international/gcfjcab/",
-  "https://www.rivalo.com/en/sportsbook/cricket/gcbbab/",
-  "https://www.rivalo.com/en/sportsbook/cricket/gcbbab/",
-  "https://www.rivalo.com/en/sportsbook/cricket-australia/gejbcab/",
-  "https://www.rivalo.com/en/sportsbook/cricket-england/gijcab/",
-  "https://www.rivalo.com/en/sportsbook/cricket-international/gbafcab/",
-  "https://www.rivalo.com/en/sportsbook/cricket-india/gejhcab/",
-  "https://www.rivalo.com/en/sportsbook/golf/gjbab/"
+
+urls = [
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-concacaf-league/ggcbeedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-apostas-em-partidas-da-temporada/ghhcaba/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-b/gbeejdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-copa-paulista-group-2/ggbafedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c/gchcbddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c-grupo-b/gchcbedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-campeonato-brasileiro-sub-20-grupo-f/gfcfjedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileiro-serie-a-apostas-em-partidas-da-temporada/gbggjeba/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileiro-u23/gbijdeba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-dos-campeoes-qualification/gibagba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-dos-campeoes-apostas-em-partidas-da-temporada/ggidgba/",
+    "https://www.rivalo.com/pt/apostas/futebol-mexico-primeira-divisao-apertura/gcidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-mexico-liga-de-promocao-apertura/gbjbidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-primeira-liga/gbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-championship/gcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-league-one/gddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-league-two/giedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-national-league/ghcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-premier-league-daily-specials/gbibbcba/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-primeira-liga/gfddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-liga-nacional-de-futebol/gbbbgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-pfl-centro/gcbcaidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-pfl-oeste/gdbgcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-russia-premier-league-feminino/ggdfddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-supertaca-da-ace-amja/ggefgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-3-liga/gideddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-bundesliga-2-divisao/gebdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-bundesliga/gecdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-dfb-pokal/geddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-2nd-bundesliga-daily-specials/gbibbbba/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-bayern-especiais/gbeehaba/",
+    "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-d/gbdbaidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-colombia-primera-a-clausura/gbjcdgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-colombia-primeira-b-abertura/gfhhgjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-npl-new-south-wales/gdbdaadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-primeira-divisao-da-liga-estatal-oeste/gdbejjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-primeira-liga-nacional-de-queensland/gdbciddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-npl-tasmania/gdbfaidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-primeira-liga-victoria/gbacbgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-australia-liga-hyundai-a-apostas-em-partidas-da-temporada/gbciecba/",
+    "https://www.rivalo.com/pt/apostas/futebol-dinamarca-superliga/gbcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-dinamarca-1-divisao/gbddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-dinamarca-2-divisao-grupo-1/gefbgidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-dinamarca-2-divisao-grupo-2/gefbgjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-europa-qualification/gibajba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-europa-apostas-em-partidas-da-temporada/ggidfba/",
+    "https://www.rivalo.com/pt/apostas/futebol-peru-primeira-divisao-apertura/gdeeghdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-liga-regional-bavaria/gcbcjjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-regionalliga-norte/geedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-regionalliga-sudoeste/gcbdaadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-regionalliga-nordeste/gcbdabdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-liga-regional-oeste/gidgedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suecia-allsvenskan/gcedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suecia-superettan/gchdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profesional-boliviano-clausura/gbaaaaaaabdhfa/",
+    "https://www.rivalo.com/pt/apostas/futebol-venezuela-copa-venezuela/ghabbba/",
+    "https://www.rivalo.com/pt/apostas/futebol-eua-united-soccer-league/gbfhgddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-eua-major-league-soccer/gbidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-franca-ligue-1/gedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-franca-ligue-2/gbjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-franca-nacional/gjfadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-franca-ligue-1-daily-specials/gbicbiba/",
+    "https://www.rivalo.com/pt/apostas/futebol-austria-bundesliga/gcjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-austria-primeira-liga/gdadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-austria-bundesliga/gbjbbdba/",
+    "https://www.rivalo.com/pt/apostas/futebol-espanha-supertaca-de-espanha/gcdafdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-espanha-la-liga/gdgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-turquia-super-liga/ggcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-turquia-tff-1-liga/gbabdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-turquia-super-lig-daily-specials/gbiijcba/",
+    "https://www.rivalo.com/pt/apostas/futebol-italia-taca-de-italia/gdfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-portugal-primeira-liga/gfcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-portugal-segunda-liga/gciadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suica-super-liga/gbagadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suica-liga-challenge/gbagbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-a-grupo-1/gbjahhba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-a-grupo-2/gbjahiba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-a-grupo-3/gbjahjba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-a-grupo-4/gbjaiaba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-resultados-finais-league-a/gbjahbba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-b-grupo-1/gbjaibba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-b-grupo-2/gbjaicba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-b-grupo-3/gbjaidba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-b-grupo-4/gbjaieba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-resultados-finais-league-b/gbjajdba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-c-grupo-1/gbjaifba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-c-grupo-2/gbjaigba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-c-grupo-3/gbjaihba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-c-grupo-4/gbjaiiba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-resultados-finais-league-c/gbjajeba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-d-grupo-1/gbjaijba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-d-grupo-2/gbjajaba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-d-grupo-3/gbjajbba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-liga-das-nacoes-da-uefa-d-grupo-4/gbjajcba/",
+    "https://www.rivalo.com/pt/apostas/futebol-liga-das-nacoes-da-uefa-resultados-finais-league-d/gbjajfba/",
+    "https://www.rivalo.com/pt/apostas/futebol-holanda-eredivisie/gdjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-belgica-first-division-a/gdidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-belgica-primeira-divisao-b-primeira-etapa/gfedjfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-noruega-eliteserien/gfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-noruega-1-divisao/ggdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-escocia-premiership-da-escocia/gfedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-escocia-championship-da-escocia/gffdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-escocia-segunda-divisao/gfgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-escocia-terceira-divisao/gfhdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-argentina-primeira-divisao-torneio-inicial/ggidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-croacia-1-hnl/geidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finlandia-veikkausliiga/gdbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finlandia-ykkonen/gfchdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finlandia-kakkonen-group-a/gbcaedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-rep-checa-primeira-liga-checa/gejdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-rep-checa-fnl/gieddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-eslovenia-liga-prva/gjedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-polonia-ekstraklasa/ggedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-polonia-i-liga/gbechdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-romenia-liga-i/gcbjdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-romenia-liga-2/gfeihidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-bulgaria-primeira-liga-prof/gcdcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-eslovaquia-superliga/gjcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-eslovaquia-2-liga/gbdhfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-ucrania-primeira-liga/gdiedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-estonia-esilliga/giiejdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-primeira-divisao-da-islandia/gbacdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-segunda-divisao-da-islandia/gficdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-3-deild/gbdhbfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-landsbankadeild-kvenna/ggcbddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-4-deild-group-a/ghhhaba/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-4-deild-group-c/ghhhjba/",
+    "https://www.rivalo.com/pt/apostas/futebol-islandia-u19/gddagba/",
+    "https://www.rivalo.com/pt/apostas/futebol-irlanda-do-norte-primeira-liga/giiddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-israel-league-cup-national-group-a/gfedfbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-israel-league-cup-national-group-b/gfedfcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-israel-league-cup-national-group-c/gfedfddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-israel-league-cup-national-group-d/gfedfedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-pais-de-gales-liga-premier-galesa/gjaedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-georgia-liga-nacional-2/gegbeadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-costa-rica-primera-division-campeonato-invierno/gehbddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-chile-primeira-divisao/gghciadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-chile-primera-b-torneo-transicion/ggbehgdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-equador-serie-a-segunda-etapa/gbdihdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-honduras-liga-nacional-abertura/gbhadedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-paraguai-primeira-divisao-encerramento/gbghfcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-ruanda-taca-da-paz/geedhcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-japao-j-league/gicdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-japao-j-league-2/gdadedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-china-super-liga-chinesa/ggfcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-china-liga-chinesa/gdfiddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-indonesia-indonesia-soccer-championship/gebbddab/",
+    "https://www.rivalo.com/pt/apostas/futebol-coreia-do-sul-classico-liga-k/gdciedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-coreia-do-sul-classico-liga-k-2/ggcdadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-irao-liga-pro/gdgcfdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-catar-liga-de-estrelas/geafbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-argelia-liga-da-argelia/gdgfhdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-africa-do-sul-primeira-liga/gdidadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-africa-do-sul-mtn-8/gbbcdedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-egito-liga-principal/gdigbcdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-amadores-premier-league-2-division-1/gfeiejdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-amadores-liga-premier-divisao-2/gfeifadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-amadores-national-league-norte/gcdeidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-inglaterra-amadores-national-league-sul/gcdejdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suecia-amadores-sub-19/ghdagadab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suecia-amateur-3-division-nordvastra-gotaland/gbbfbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-suecia-amateur-3-division-vastra-svealand/gcbcjba/",
+    "https://www.rivalo.com/pt/apostas/futebol-noruega-amador-u19-interkrets/ghijbdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finnland-amateure-3-division-helsinki-uusimaa-1/giahhdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finnland-amateure-3-division-helsinki-uusimaa-2/giahidab/",
+    "https://www.rivalo.com/pt/apostas/futebol-finnland-amateure-3-division-helsinki-uusimaa-3/giahjdab/",
+    "https://www.rivalo.com/pt/apostas/basquetebol/gcbab/l/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-estados-unidos-america-wnba/gfjbdab/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-alemanha-apostas-em-partidas-da-temporada/ghgjgba/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-internacional-campeonato-europeu-sub-18-div-a-feminino-playoffs/ggdjgdab/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-internacional-campeonato-europeu-sub-18-div-a-feminino-qualificacao-para-jogos-de-posicao/gcjefidab/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-brasil-paulista-league/gbbjhgba/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-ilhas-filipinas-mpbl/ggidcddab/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-puerto-rico-superior-nacional/gfgifba/",
+    "https://www.rivalo.com/pt/apostas/basquetebol-uruguai-el-metro/gbjeghba/",
+    "https://www.rivalo.com/pt/apostas/tenis/gfbab/h/",
+    "https://www.rivalo.com/pt/apostas/tenis/gfbab/l/",
+    "https://www.rivalo.com/pt/apostas/tenis-atp-atp-toronto-canada-men-singles/ggfiicdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-atp-atp-toronto-canada-men-double/ggfiiddab/",
+    "https://www.rivalo.com/pt/apostas/tenis-atp-grand-slam/gdhghba/",
+    "https://www.rivalo.com/pt/apostas/tenis-atp-atp-torneio-vencedor-final/gbbfhbba/",
+    "https://www.rivalo.com/pt/apostas/tenis-wta-wta-montreal-canada-women-singles/gggbejdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-wta-wta-montreal-canada-women-double/gggbfadab/",
+    "https://www.rivalo.com/pt/apostas/tenis-wta-grand-slam/gcgdbba/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-aptos-usa-men-singles/ghaejbdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-aptos-usa-men-double/ghaejcdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-portoroz-slovenia-men-singles/ghaejedab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-portoroz-slovenia-men-double/ghaejfdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-pullach-germany-men-singles/ghaejhdab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-pullach-germany-men-double/ghaejidab/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-jinan-china-men-singles/ghaeihdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-russia-khl/gghddab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-amigaveis-de-clubes/gbeifdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-a/gecafidab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-b/gecafjdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-c/gecagadab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-d/gecagbdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-e/gecagcdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-apostas-em-partidas-da-temporada/gbcfigba/",
+    "https://www.rivalo.com/pt/apostas/hoquei-internacional-amigaveis-de-clubes-modziez/gbegdeba/",
+    "https://www.rivalo.com/pt/apostas/hoquei-suecia-shl/gbbfdab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-u18-world-championship-damen/gbdehidab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-grupo-a/ghbaebdab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-grupo-b/ghbaiddab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-sub-18-grupo-c/ghbaeddab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-grupo-d/ghbaefdab/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-2018-feminino/gbbjddba/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-apostas-em-partidas-da-temporada/gecedba/",
+    "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-do-mundo-2019-masculinos/ghcefba/",
+    "https://www.rivalo.com/pt/apostas/andebol-brasil-super-paulista/gbihhdba/",
+    "https://www.rivalo.com/pt/apostas/beisebol-estados-unidos-america-mlb/gcfdab/",
+    "https://www.rivalo.com/pt/apostas/beisebol-mexico-liga-mexicana/gfhgfdab/",
+    "https://www.rivalo.com/pt/apostas/futsal-brasil-taca-brazil/gbjgifba/",
+    "https://www.rivalo.com/pt/apostas/futebol-americano-estados-unidos-america-nfl/gehdab/",
+    "https://www.rivalo.com/pt/apostas/futebol-americano-estados-unidos-america-nfl-pre-epoca/ggdeedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-americano-canada-cfl/ggcbdab/",
+    "https://www.rivalo.com/pt/apostas/badmington/gdbbab/l/",
+    "https://www.rivalo.com/pt/apostas/badmington-internacional-open-do-vietname-wt/ghcjfidab/",
+    "https://www.rivalo.com/pt/apostas/badmington-internacional-open-do-vietname-wt-pares/ghcjfjdab/",
+    "https://www.rivalo.com/pt/apostas/cricket-australia-apostas-em-partidas-da-temporada/gbhefiba/",
+    "https://www.rivalo.com/pt/apostas/cricket-inglaterra-natwest-t20-blast-north-group/ggahgidab/",
+    "https://www.rivalo.com/pt/apostas/cricket-inglaterra-natwest-t20-blast-south-group/ggahhadab/",
+    "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
+    "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
+    "https://www.rivalo.com/pt/apostas/cricket-internacional-icc-taca-do-mundo/gbjgdiba/",
+    "https://www.rivalo.com/pt/apostas/cricket-india-liga-premier-tamil-nadu-play-offs/ggcefcdab/",
 ]
 
-main_url = "https://www.rivalo.com/en/sportsbook"
+# futebol
+# basket
+# tenis
+# hoquei
+# andebol
+# voleibol
+# beisebol
+# futebol-americano
+# tenis-de-mesa
+# badmington
+# cricket
+
+main_url = "https://www.rivalo.com/pt/apostas/"
 
 
 def instance_browser():
     chrome_options = Options()
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
     return webdriver.Chrome(chrome_options=chrome_options)
 
@@ -197,11 +286,21 @@ def get_leagues_list():
     print("sports size", len(sports_list))
     for sport in sports_list:
         print("clicking in sports...")
-        time.sleep(2)
+        func = sport.find_element_by_css_selector(
+            "span img").get_attribute("onclick")
+        time.sleep(1)
+        sport.click()
+
+    sports_list = browser.find_elements_by_css_selector(
+        "#comp-navTree div ul.level_1 li div ul li a")
+    print("sports size", len(sports_list))
+    for sport in sports_list:
+        print("clicking in sports...")
+        time.sleep(1)
         sport.click()
 
     leagues_element_list = browser.find_elements_by_css_selector(
-        "#comp-navTree div ul.level_1 li a")
+        "#comp-navTree div ul.level_1 li div ul li ul li a")
     leagues_list = [x.get_attribute("href") for x in leagues_element_list]
     browser.close()
     return leagues_list
@@ -227,118 +326,195 @@ def is_hour(item):
         return False
 
 
+mercado_list = [
+    "Dupla possibilidade",
+    "Handicap (0:1)",
+    "Handicap (0:2)",
+    "Handicap (1:0)",
+    "Aposta Acima/Abaixo (2,5)",
+    "Aposta Acima/Abaixo (0,5)",
+    "Aposta Acima/Abaixo (1,5)",
+    "Aposta Acima/Abaixo (3,5)",
+    "Aposta Acima/Abaixo (4,5)",
+]
+
+
 def running_crawler(league_url, current_item, total_items):
-    data = {}
-    browser = instance_browser()
-    main_page(browser, main_url)
-    print("Running item: " + str(current_item) + " of " + str(total_items))
-    print("getting...", league_url)
-    browser.get(league_url)
-    league_name = ""
-    m = re.search("sportsbook\/([^\/]+)", league_url)
-    if m:
-        league_name = m.group(1)
+    try:
+        rivalo = []
+        data = {}
 
-    matches_list = []
-    matches = browser.find_elements_by_css_selector(
-        ".jq-compound-event-block .e_active .jq-event-row-cont"
-    )
-    load_mores = browser.find_elements_by_css_selector(
-        ".jq-compound-event-block .e_active .jq-event-row-cont .t_more"
-    )
+        browser = instance_browser()
+        main_page(browser, main_url)
 
-    if len(load_mores) == 0:
-        print("getting data...")
+        print("Running item: " + str(current_item + 1) + " of " + str(total_items))
 
-        for idx, match in enumerate(matches):
-            match_rows = []
-            matches_data = {}
+        print("Getting...", league_url)
+        browser.get(league_url)
+
+        league_infos = browser.find_element_by_css_selector(
+            ".t_head .fs_16").text.split('-')
+        esp_name = league_infos[0]
+        league_name = league_infos[1]
+        camp_name = league_infos[2]
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        print("")
+        print(esp_name, league_name, camp_name)
+        data["esporte_nome"] = esp_name
+        data["liga_nome"] = league_name
+        data["campeonato_nome"] = camp_name
+        data["camp_url"] = league_url
+
+        matches_list = []
+        match_rows = browser.find_elements_by_css_selector(
+            ".jq-compound-event-block .e_active .jq-event-row-cont , .jq-compound-event-block .e_active .t_space"
+        )
+
+        current_date = None
+
+        for idx, match in enumerate(match_rows):
+            match_idx = idx
+            current_hour = None
+            event_name = None
             home = None
             visitant = None
             home_odd = None
             draw_odd = None
             visitant_odd = None
+            debug = None
+
+            categoria_nome = None
+            mercado_nome = None
+            poss_nome = None
+            poss_valor = None
+
+            match_data = {}
+
+            match_class = match.get_attribute("class")
+            m = re.match("(t_space)", match_class)
+            if m:
+                current_date = re.search(
+                    "\s(\d{2}\.\d{2})\.", match.text.strip()).group(1)
+                continue
 
             match_data_list = match.text.strip().splitlines()
             match_len = len(match_data_list)
-            print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            print("league", league_url)
-            print(match_data_list)
+            print("Main match data ", match_data_list)
 
             if match_len < 6:
+                print("Drop match " + str(idx + 1), league_url)
                 continue
 
             if is_hour(match_data_list[0]):
+                current_hour = match_data_list[0]
+
                 home = match_data_list[1]
                 visitant = match_data_list[2]
-                home_odd = match_data_list[3]
-                visitant_odd = match_data_list[4]
+
+                if match_data_list[5] == 'LIVE':
+                    home_odd = match_data_list[3]
+                    visitant_odd = match_data_list[4]
+                else:
+                    home_odd = match_data_list[3]
+                    draw_odd = match_data_list[4]
+                    visitant_odd = match_data_list[5]
             else:
+                print("dont have hour")
                 home = match_data_list[0]
                 visitant = match_data_list[1]
                 home_odd = match_data_list[2]
                 draw_odd = match_data_list[3]
                 visitant_odd = match_data_list[4]
 
-            load_mores[idx].click()
-            time.sleep(2)
-            if idx == 0:
-                load_more_heads = browser.find_elements_by_css_selector(
-                    ".jq-compound-event-block .e_active .jq-event-row-cont .t_more_head"
-                )[1:]
-                for more_rows in load_more_heads:
-                    more_rows.click()
-                    time.sleep(1)
+            event_name = home + ' - ' + visitant
 
-            load_match_rows = match.find_elements_by_css_selector(
-                ".sp_bets .border_ccc div.t_more_row"
+            print('Event: ', event_name)
+            print('Casa: ', home)
+            print('Visitante: ', visitant)
+
+            print('Casa odd: ', home_odd)
+            print('Empate odd: ', draw_odd)
+            print('Visitante odd:', visitant_odd)
+
+            print('Data :', current_date)
+            print('Hora :', current_hour)
+
+            data["data"] = current_date
+            data["hora"] = current_hour
+
+            data["casa"] = home
+            data["visitante"] = visitant
+
+            data["casa_odd"] = home_odd
+            data["empate_odd"] = draw_odd
+            data["visitante_odd"] = visitant_odd
+
+            load_scout = match.find_element_by_css_selector(
+                ".t_more"
             )
-            print("scouts: ", len(load_match_rows))
-
-            for row in load_match_rows:
-                if row.text.strip() != "":
-                    print(row.text.strip().splitlines())
-                    match_data_rows = row.text.strip().splitlines()
-                    match_rows.append(match_data_rows)
-
-            load_mores[idx].click()
+            load_scout.click()
             time.sleep(1)
 
-            matches_data["home"] = home
-            matches_data["visitant"] = visitant
-            matches_data["home_odd"] = home_odd
-            matches_data["draw_odd"] = draw_odd
-            matches_data["visitant_odd"] = visitant_odd
-            matches_data["debug"] = match_data_list
-            matches_data["scout_rows"] = match_rows
-            matches_list.append(matches_data)
+            categorias = match.find_elements_by_css_selector(".t_more_head")
 
-        data[league_name] = matches_list
-        data["url"] = league_url
-        write_file(league_name, data)
-    browser.close()
+            if idx == 1:
+                categorias = match.find_elements_by_css_selector(".t_more_head")[
+                    1:]
+                for cat in categorias:
+                    cat.click()
+                    time.sleep(1)
+
+            mercados = match.find_elements_by_css_selector(
+                ".border_ccc div.t_more_row")
+            scouts = []
+            for me in mercados:
+                mercado_data = me.text.strip().splitlines()
+                data["mercado_nome"] = mercado_data[0]
+                poss_list = mercado_data[1:]
+                for idx, poss in enumerate(poss_list):
+                    if (idx % 2) == 0:
+                        for m in mercado_list:
+                            if m == data["mercado_nome"]:
+                                data["poss_nome"] = poss + \
+                                    " " + poss_list[idx+1]
+                                data["poss_valor"] = poss_list[idx+1]
+                                print(data)
+                                rivalo.append(data)
+
+            load_scout.click()
+            time.sleep(1)
+
+        time.sleep(1)
+    except Exception as e:
+        print(e)
+        print("crawler broken: ", league_url)
+    finally:
+        print("WRITE")
+        write_file('data', rivalo)
+        browser.close()
 
 
 if __name__ == '__main__':
     start_time = time.time()
     # urls = get_leagues_list()
     # write_file("_league", urls)
-    pool = Pool(processes=8)
-    # urls = [
-        #   "https://www.rivalo.com/en/sportsbook/golf/gjbab/",
-            # "https://www.rivalo.com/en/sportsbook/football/gbbab/",
-    #     "https://www.rivalo.com/en/sportsbook/football-germany-amateur/gbcccab/",
-    #         "https://www.rivalo.com/en/sportsbook/american-football-canada/gjdcab/"
-    # ]
-    pool_list = []
-    urls_len = len(all_urls)
+    # print("Escreveu")
+    pool = Pool(processes=4)
+    urls = [
+        "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/"
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+    ]
+    # pool_list = []
     # urls_len = len(urls)
-    for idx, item in enumerate(all_urls):
     # for idx, item in enumerate(urls):
-        print(item)
-        result = pool.apply_async(running_crawler, (item, idx, urls_len))
-        pool_list.append(result)
-    pool.close()
-    pool.join()
-    [x.get() for x in pool_list]
+    #     result = pool.apply_async(running_crawler, (item, idx, urls_len))
+    #     pool_list.append(result)
+
+    # print("Pools :", len(pool_list))
+    # pool.close()
+    # pool.join()
+    # [x.get() for x in pool_list]
+    running_crawler(urls[0], 0, 1)
     print("--- %s seconds ---" % (time.time() - start_time))

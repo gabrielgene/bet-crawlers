@@ -6,12 +6,12 @@ con = psycopg2.connect(host='172.17.0.2', database='bet-data-dev',
 
 cur = con.cursor()
 
-# sql = "create table aposta_bet (id serial primary key, casa varchar(100), visitante varchar(100)," \
-#     "casa_odd varchar(20), empate_odd varchar(20), visitante_odd varchar(20), debug varchar(900))"
-# cur.execute(sql)
+sql = "create table aposta_bet (id serial primary key, casa varchar(100), visitante varchar(100)," \
+    "casa_odd varchar(20), empate_odd varchar(20), visitante_odd varchar(20), debug varchar(900))"
+cur.execute(sql)
 
-# sql = "create table scout_bet (id serial primary key, name varchar(100), data varchar(900), aposta_id integer REFERENCES aposta_bet (id))"
-# cur.execute(sql)
+sql = "create table scout_bet (id serial primary key, name varchar(100), data varchar(900), aposta_id integer REFERENCES aposta_bet (id))"
+cur.execute(sql)
 
 with open('debug.json') as f:
     data = json.load(f)
@@ -33,9 +33,9 @@ for bet in list_of_bets:
     print('>>>>>>>>>>>>>>>>>>> HOME')
     print(debug)
 
-    # sql = "insert into aposta_bet values (default, '{}', '{}', '{}', '{}', '{}', '{}')".format(home, visitant, home_odd, draw_odd, visitant_odd, debug)
-    sql = "insert into aposta_bet values (default, %s, %s, %s, %s, %s, %s) RETURNING id"
-    # print(sql)
+    sql = "insert into aposta_bet values (default, '{}', '{}', '{}', '{}', '{}', '{}')".format(home, visitant, home_odd, draw_odd, visitant_odd, debug)
+    # sql = "insert into aposta_bet values (default, %s, %s, %s, %s, %s, %s) RETURNING id"
+    print(sql+";")
     cur.execute(sql, (home, visitant, home_odd, draw_odd,
                       visitant_odd, debug))
     id_of_new_row = cur.fetchone()[0]
