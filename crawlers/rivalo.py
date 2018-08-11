@@ -264,7 +264,8 @@ def instance_browser():
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
-    return webdriver.Chrome(chrome_options=chrome_options)
+    chrome_options.add_argument("no-sandbox")
+    return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver',chrome_options=chrome_options)
 
 
 def main_page(browser, main_url):
@@ -340,6 +341,7 @@ def running_crawler(league_url, current_item, total_items):
     camp_name = str(current_item)
     try:
         browser = instance_browser()
+        browser.set_page_load_timeout(60)
         main_page(browser, main_url)
 
         print("Running item: " + str(current_item + 1) + " of " + str(total_items))
@@ -533,6 +535,7 @@ if __name__ == '__main__':
     # urls = get_leagues_list()
     # write_file("_league", urls)
     # print("Escreveu")
+    print("Start")
 
     while True:
         pool = Pool(processes=4)
