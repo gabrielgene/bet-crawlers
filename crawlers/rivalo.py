@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from multiprocessing import Pool
 import re
 import time
+import asyncio
 
 urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -532,30 +533,52 @@ if __name__ == '__main__':
     # urls = get_leagues_list()
     # write_file("_league", urls)
     # print("Escreveu")
-    pool = Pool(processes=4)
-    urls = [
-        # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
-        "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-        "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
-    ]
-    pool_list = []
-    urls_len = len(urls)
-    for idx, item in enumerate(urls):
-        result = pool.apply_async(running_crawler, (item, idx, urls_len))
-        pool_list.append(result)
 
-    print("Pools :", len(pool_list))
-    pool.close()
-    pool.join()
-    [x.get() for x in pool_list]
+    while True:
+        pool = Pool(processes=4)
+        urls = [
+            # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
+            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
+            # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
+            # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+            "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+            "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+        ]
+        pool_list = []
+        urls_len = len(urls)
+        for idx, item in enumerate(urls):
+            pool.apply_async(running_crawler, (item, idx, urls_len))
+        pool.close()
+        pool.join()
+        print("Running")
+
+        time.sleep(1)
+
+
+    # while True:
+    #     loop = asyncio.get_event_loop()
+    #     for i in range(3):
+    #         future = asyncio.ensure_future(running_crawler(urls[0], 1, urls_len))
+    #         loop.run_until_complete(future)
+    #     print('finish')
+    #     time.sleep(2)
+    # print("Pools :", len(pool_list))
+    # while True:
+    #     # for idx, item in enumerate(urls):
+    #     pool.apply_async(running_crawler, (urls[0], 1, urls_len))
+    #     time.sleep(1)
+    #     pool.close()
+    #     pool.join()
+    #     print("Running")
+    # while True:
+    #     print("Running")
+        # [x.get() for x in pool_list]
     # running_crawler(urls[0], 0, 1)
     print("--- %s seconds ---" % (time.time() - start_time))
