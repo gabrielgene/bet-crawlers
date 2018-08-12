@@ -5,7 +5,6 @@ from multiprocessing import Pool
 import re
 import psycopg2
 import time
-import asyncio
 
 urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -245,18 +244,6 @@ urls = [
     "https://www.rivalo.com/pt/apostas/cricket-india-liga-premier-tamil-nadu-play-offs/ggcefcdab/",
 ]
 
-# futebol
-# basket
-# tenis
-# hoquei
-# andebol
-# voleibol
-# beisebol
-# futebol-americano
-# tenis-de-mesa
-# badmington
-# cricket
-
 main_url = "https://www.rivalo.com/pt/apostas/"
 
 
@@ -273,36 +260,6 @@ def instance_browser():
 def main_page(browser, main_url):
     print('getting...', main_url)
     browser.get(main_url)
-
-
-def get_leagues_list():
-    browser = instance_browser()
-    main_page(browser, main_url)
-    browser.find_element_by_css_selector("#jq-further-0").click()
-    sports_list = browser.find_elements_by_css_selector(
-        "#comp-navTree div ul.level_1 li a")
-
-    print("sports size", len(sports_list))
-    for sport in sports_list:
-        print("clicking in sports...")
-        func = sport.find_element_by_css_selector(
-            "span img").get_attribute("onclick")
-        time.sleep(1)
-        sport.click()
-
-    sports_list = browser.find_elements_by_css_selector(
-        "#comp-navTree div ul.level_1 li div ul li a")
-    print("sports size", len(sports_list))
-    for sport in sports_list:
-        print("clicking in sports...")
-        time.sleep(1)
-        sport.click()
-
-    leagues_element_list = browser.find_elements_by_css_selector(
-        "#comp-navTree div ul.level_1 li div ul li ul li a")
-    leagues_list = [x.get_attribute("href") for x in leagues_element_list]
-    browser.close()
-    return leagues_list
 
 
 def split_list(old_list):
@@ -409,31 +366,17 @@ def running_crawler(league_url, current_item, total_items):
                 print("Drop match " + str(idx + 1), league_url)
                 continue
 
-            if is_hour(match_data_list[0]):
-                current_hour = match_data_list[0]
+            current_hour = match_data_list[0]
+            home = match_data_list[1]
+            visitant = match_data_list[2]
 
-                home = match_data_list[1]
-                visitant = match_data_list[2]
-
-                if match_data_list[5] == 'LIVE':
-                    home_odd = match_data_list[3]
-                    visitant_odd = match_data_list[4]
-                else:
-                    home_odd = match_data_list[3]
-                    draw_odd = match_data_list[4]
-                    visitant_odd = match_data_list[5]
+            if match_data_list[5].strip() == 'LIVE':
+                home_odd = float(match_data_list[3].replace(",", "."))
+                visitant_odd = float(match_data_list[4].replace(",", "."))
             else:
-                print("dont have hour")
-                home = match_data_list[1]
-                visitant = match_data_list[2]
-
-                if match_data_list[5] == 'LIVE':
-                    home_odd = match_data_list[3]
-                    visitant_odd = match_data_list[4]
-                else:
-                    home_odd = match_data_list[3]
-                    draw_odd = match_data_list[4]
-                    visitant_odd = match_data_list[5]
+                home_odd = float(match_data_list[3].replace(",", "."))
+                draw_odd = float(match_data_list[4].replace(",", "."))
+                visitant_odd = float(match_data_list[5].replace(",", "."))
 
             event_name = home + ' - ' + visitant
 
@@ -468,7 +411,7 @@ def running_crawler(league_url, current_item, total_items):
             sql = "insert into rivalo_eventos values (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, default) RETURNING id"
             cur.execute(sql, (esp_name, league_name, camp_name,
                               league_url, current_date, current_hour, event_name,
-                              home, visitant, home_odd, draw_odd, visitant_odd))
+                              home, visitant, evento["casa_odd"], evento["empate_odd"], evento["visitante_odd"]))
             con.commit()
             evento_id = cur.fetchone()[0]
             print(evento_id)
@@ -511,20 +454,25 @@ def running_crawler(league_url, current_item, total_items):
                         if len(poss_list) == 6:
                             mercado["poss_nome_1"] = poss_list[0] + \
                                 " " + poss_list[1]
-                            mercado["poss_valor_1"] = poss_list[1]
+                            mercado["poss_valor_1"] = float(
+                                poss_list[1].replace(",", "."))
                             mercado["poss_nome_2"] = poss_list[2] + \
                                 " " + poss_list[3]
-                            mercado["poss_valor_2"] = poss_list[3]
+                            mercado["poss_valor_2"] = float(
+                                poss_list[3].replace(",", "."))
                             mercado["poss_nome_3"] = poss_list[4] + \
                                 " " + poss_list[5]
-                            mercado["poss_valor_3"] = poss_list[5]
+                            mercado["poss_valor_3"] = float(
+                                poss_list[5].replace(",", "."))
                         else:
                             mercado["poss_nome_1"] = poss_list[0] + \
                                 " " + poss_list[1]
-                            mercado["poss_valor_1"] = poss_list[1]
+                            mercado["poss_valor_1"] = float(
+                                poss_list[1].replace(",", "."))
                             mercado["poss_nome_2"] = poss_list[2] + \
                                 " " + poss_list[3]
-                            mercado["poss_valor_2"] = poss_list[3]
+                            mercado["poss_valor_2"] = float(
+                                poss_list[3].replace(",", "."))
 
                             mercado["poss_nome_3"] = None
                             mercado["poss_valor_3"] = None
@@ -537,9 +485,18 @@ def running_crawler(league_url, current_item, total_items):
                         poss_nome_3 = mercado["poss_nome_3"]
                         poss_valor_3 = mercado["poss_valor_3"]
 
-                        sql = "insert into rivalo_mercados values (default, %s, %s, %s, %s, %s, %s, %s, %s, default)"
-                        cur.execute(sql, (evento_id, mercado_nome,
-                                          poss_nome_1, poss_valor_1,
+                        casa_odd = None
+                        empate_odd = None
+                        visitante_odd = None
+
+                        if mercado_data[0] == "Dupla possibilidade":
+                            casa_odd = evento["casa_odd"]
+                            empate_odd = evento["empate_odd"]
+                            visitante_odd = evento["visitante_odd"]
+
+                        sql = "insert into rivalo_mercados values (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, default)"
+                        cur.execute(sql, (evento_id, mercado_nome, casa_odd, empate_odd, visitante_odd,
+                                          evento["nome"], evento["esporte_nome"], poss_nome_1, poss_valor_1,
                                           poss_nome_2, poss_valor_2,
                                           poss_nome_3, poss_valor_3))
                         con.commit()
@@ -567,29 +524,24 @@ def running_crawler(league_url, current_item, total_items):
 
 
 if __name__ == '__main__':
-    start_time = time.time()
-    # urls = get_leagues_list()
-    # write_file("_league", urls)
-    # print("Escreveu")
-
-    print("Start")
-
     while True:
-        pool = Pool(processes=4)
+        print("Start")
+        start_time = time.time()
+        pool = Pool(processes=16)
         # urls = [
-            # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
-            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
-            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-            # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
-            # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-        #     "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-        #     "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
-        #     "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
+        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
+        # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
+        # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
         # ]
         pool_list = []
         urls_len = len(urls)
@@ -597,8 +549,36 @@ if __name__ == '__main__':
             pool.apply_async(running_crawler, (item, idx, urls_len))
         pool.close()
         pool.join()
-        print("Running")
-
+        write_file("time", "loop time: " + "--- %s seconds ---" %
+                   (time.time() - start_time))
+        print("Finish loop")
         time.sleep(1)
 
-    print("--- %s seconds ---" % (time.time() - start_time))
+
+# 60099, samuelcarvalho, JFppOslQ
+
+# 146.252.88.44
+# 146.252.88.59
+# 146.252.88.61
+# 146.252.88.72
+# 146.252.88.85
+# 146.252.88.91
+# 146.252.88.92
+# 146.252.88.108
+# 146.252.88.110
+# 146.252.88.113
+# 146.252.88.134
+# 146.252.88.147
+# 146.252.88.148
+# 146.252.88.153
+# 146.252.88.157
+# 146.252.88.170
+# 146.252.88.182
+# 146.252.88.184
+# 146.252.88.209
+# 146.252.88.211
+# 146.252.88.227
+# 146.252.88.239
+# 146.252.88.242
+# 146.252.88.243
+# 146.252.88.250
