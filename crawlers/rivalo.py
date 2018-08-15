@@ -253,8 +253,8 @@ def instance_browser():
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("no-sandbox")
-    # return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
-    return webdriver.Chrome(chrome_options=chrome_options)
+    return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
+    # return webdriver.Chrome(chrome_options=chrome_options)
 
 
 def main_page(browser, main_url):
@@ -284,6 +284,7 @@ def is_hour(item):
 
 mercado_list = [
     "Dupla possibilidade",
+    "Empate não tem aposta",
     "Handicap (0:1)",
     "Handicap (0:2)",
     "Handicap (1:0)",
@@ -292,6 +293,50 @@ mercado_list = [
     "Aposta Acima/Abaixo (1,5)",
     "Aposta Acima/Abaixo (3,5)",
     "Aposta Acima/Abaixo (4,5)",
+    "Os dois times marcam?",
+    "Quem é o próximo a marcar?",
+    "Quem ganha o 1. tempo?",
+    "Quem ganha o 2. tempo?",
+    "Par/ Impar",
+    # "Acima/Abaixo de gols (para cada time)",
+    "Acima/ Abaixo Faltas",
+    # "Acima/Abaixo escanteios",
+    "Qual time vai conseguir a maioria dos escanteios?",
+    # "Acima/Abaixo escanteios 1 tempo",
+    # "Acima/Abaixo escanteios 2 tempo",
+    "1. tempo Aposta Acima/Abaixo",
+    "2. tempo Aposta Acima/Abaixo",
+    "Acima/ Abaixo cartões tempo total",
+    "Acima/ Abaixo cartões primeiro tempo",
+    "Dupla Possibilidade primeiro tempo",
+    "Empate não tem aposta primeiro tempo",
+    "Acima/Abaixo gols segundo tempo",
+    "Acima/Abaixo cartões segundo tempo",
+    "Dupla Possibilidade segundo tempo",
+    "Empate não tem aposta segundo tempo",
+    "Acima/Abaixo pontos",
+    "Quem vencerá o 1.tempo?",
+    "Acima/Abaixo sets na partida",
+    "Acima/Abaixo games na partida",
+    "HC 1,5:0 games na partida",
+    # "Acima/Abaixo games na partida",
+    # "Acima/Abaixo Games Ganhos (Para cada jogador)",
+    "Quem vai ganhar o set 1?",
+    "Quem vai ganhar o set 2?",
+    # "2-way ( incluindo a prorrogação/pênaltis)",
+    "Quem ganha o período Num. 1?",
+    "Período Num. 1 Acima/Abaixo da aposta",
+    "Empate não tem aposta",
+    "Acima/Abaixo de gols(para cada time)",
+    "Quem ganha o período Num. 1?",
+    # "Período Num. 1 Acima/Abaixo da aposta(todos dessa categoria)",
+    "Dupla possibilidade",
+    "Handicap",
+    "Aposta Acima/Abaixo",
+    "Quem ganha o tempo Num. 1",
+    # "Aposta acima/abaixo pontos na partida(quando tiver mercado aberto)",
+    # "Aposta acima/abaixo pontos no set(quando tiver mercado aberto)",
+    "Quem vai ganhar o set Num. 1?",
 ]
 
 
@@ -407,6 +452,18 @@ def running_crawler(league_url, current_item, total_items):
             evento["empate_odd"] = draw_odd
             evento["visitante_odd"] = visitant_odd
 
+            sql = "select id, evento_nome from rivalo_eventos where evento_nome = %s"
+            cur.execute(sql, [event_name])
+            old_event = cur.fetchone()
+            if old_event:
+                print("Delete event...")
+                sql = "delete from rivalo_mercados where evento_nome = %s"
+                cur.execute(sql, [event_name])
+                con.commit()
+                sql = "delete from rivalo_eventos where evento_nome = %s"
+                cur.execute(sql, [event_name])
+                con.commit()
+
             print("Saving event")
             sql = "insert into rivalo_eventos values (default, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, default) RETURNING id"
             cur.execute(sql, (esp_name, league_name, camp_name,
@@ -448,6 +505,8 @@ def running_crawler(league_url, current_item, total_items):
                 if len(poss_list) == 0:
                     continue
                 for m in mercado_list:
+                    mercado_pattern = "Acima/Abaixo games na partida ("
+
                     if m == mercado_data[0]:
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
@@ -516,8 +575,6 @@ def running_crawler(league_url, current_item, total_items):
         print(e)
         print("crawler broken: ", league_url)
     finally:
-        # print("WRITE")
-        # write_file(camp_name, rivalo)
         print("DONE")
         con.close()
         browser.close()
@@ -527,21 +584,22 @@ if __name__ == '__main__':
     while True:
         print("Start")
         start_time = time.time()
-        pool = Pool(processes=16)
+        pool = Pool(processes=12)
         # urls = [
-        # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
+            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
+            # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
+            # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
         # ]
         pool_list = []
         urls_len = len(urls)
@@ -551,6 +609,7 @@ if __name__ == '__main__':
         pool.join()
         write_file("time", "loop time: " + "--- %s seconds ---" %
                    (time.time() - start_time))
+        print("--- %s seconds ---" % (time.time() - start_time))
         print("Finish loop")
         time.sleep(1)
 
