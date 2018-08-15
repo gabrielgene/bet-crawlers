@@ -370,7 +370,7 @@ def running_crawler(league_url, current_item, total_items):
         camp_name = league_infos[2]
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
         print("")
-        print(esp_name, league_name, camp_name)
+        # print(esp_name, league_name, camp_name)
 
         matches_list = []
         match_rows = browser.find_elements_by_css_selector(
