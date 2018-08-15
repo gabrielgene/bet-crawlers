@@ -408,10 +408,9 @@ def running_crawler(league_url, current_item, total_items):
 
             match_data_list = match.text.strip().splitlines()
             match_len = len(match_data_list)
-            print("Main match data ", match_data_list)
 
             if match_len < 6:
-                print("Drop match " + str(idx + 1), league_url)
+                print("Drop match" + str(idx + 1), league_url)
                 continue
 
             current_hour = match_data_list[0]
