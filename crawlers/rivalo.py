@@ -341,6 +341,7 @@ def running_crawler(league_url, current_item, total_items):
     try:
         browser = None
         r = requests.get(league_url)
+        print(r.status_code)
         if r.status_code == '403':
             print("Using proxy")
             browser = instance_browser(True)
