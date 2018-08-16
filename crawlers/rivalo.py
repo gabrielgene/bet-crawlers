@@ -253,8 +253,8 @@ def instance_browser(proxyIp=None):
     if proxyIp:
         myProxy = "%s:60099" % proxyIp
         chrome_options.add_argument("--proxy-server=%s" % myProxy)
-    # return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
-    return webdriver.Chrome(chrome_options=chrome_options)
+    return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
+    # return webdriver.Chrome(chrome_options=chrome_options)
 
 
 def main_page(browser, main_url):
