@@ -339,14 +339,18 @@ def running_crawler(league_url, current_item, total_items):
     cur = con.cursor()
 
     try:
-        browser = instance_browser()
+        browser = None
+        r = requests.get(league_url)
+        if r == '403':
+            print("Using proxy")
+            browser = instance_browser(True)
+        else:
+            print("Dont need proxy")
+            browser = instance_browser()
         browser.set_page_load_timeout(60)
         main_page(browser, main_url)
 
         print("Running item: " + str(current_item + 1) + " of " + str(total_items))
-
-        r = requests.get(league_url)
-        print(r.status_code)
         print("Getting...", league_url)
         browser.get(league_url)
 
