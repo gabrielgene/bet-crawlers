@@ -24,6 +24,7 @@ urls = [
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-b/gbeejdab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-copa-paulista-group-2/ggbafedab/",
+    "https://www.rivalo.com/pt/apostas/futebol-brasil-copa-do-brasil/gciddab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c/gchcbddab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c-grupo-b/gchcbedab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-campeonato-brasileiro-sub-20-grupo-f/gfcfjedab/",
@@ -615,24 +616,7 @@ if __name__ == '__main__':
         start_time = time.time()
         pool = Pool(processes=12)
         # urls = [
-        #  "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-        #  "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
-        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
-        #  "https://www.rivalo.com/pt/apostas/futebol-irlanda-do-norte-primeira-liga/giiddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
-        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
-        # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/",
-        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-primeira-liga/gbdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-primeira-liga/gbdab/"
         # ]
         pool_list = []
         urls_len = len(urls)
