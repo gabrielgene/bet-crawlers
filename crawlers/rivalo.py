@@ -514,8 +514,10 @@ def running_crawler(league_url, current_item, total_items):
                     m3 = re.match("Acima\/Abaixo sets na partida \(,", mercado_data[0])
                     m4 = re.match("Handicap \(", mercado_data[0])
                     m5 = re.match("Aposta Acima\/Abaixo \(", mercado_data[0])
+                    m6 = re.match("Acima\/Abaixo \(", mercado_data[0])
+                    m7 = re.match("1. tempo Aposta Acima\/Abaixo \(", mercado_data[0])
 
-                    if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5:
+                    if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5 or m6 or m7:
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
                         if len(poss_list) == 6:
