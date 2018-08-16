@@ -11,6 +11,8 @@ import psycopg2
 import time
 import random
 import requests
+import logging
+
 
 urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -501,14 +503,13 @@ def running_crawler(league_url, current_item, total_items):
                 if len(poss_list) == 0:
                     continue
                 for m in mercado_list:
-                    m1 = re.match("Acima\/Abaixo games na partida \(", m)
-                    m2 = re.match("Acima\/Abaixo Games Ganhos \(", m)
-                    m3 = re.match("Acima\/Abaixo sets na partida \(,", m)
-                    m4 = re.match("Handicap \(", m)
-                    m5 = re.match("Aposta Acima\/Abaixo \(", m)
+                    m1 = re.match("Acima\/Abaixo games na partida \(", mercado_data[0])
+                    m2 = re.match("Acima\/Abaixo Games Ganhos \(", mercado_data[0])
+                    m3 = re.match("Acima\/Abaixo sets na partida \(,", mercado_data[0])
+                    m4 = re.match("Handicap \(", mercado_data[0])
+                    m5 = re.match("Aposta Acima\/Abaixo \(", mercado_data[0])
 
                     if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5:
-                        import pdb; pdb.set_trace()
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
                         if len(poss_list) == 6:
@@ -574,6 +575,7 @@ def running_crawler(league_url, current_item, total_items):
         time.sleep(1)
     except Exception as e:
         print(e)
+        logging.exception(e)
         print("crawler broken: ", league_url)
     finally:
         print("DONE")
@@ -608,7 +610,6 @@ if __name__ == '__main__':
         #  "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
         #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
         #  "https://www.rivalo.com/pt/apostas/futebol-irlanda-do-norte-primeira-liga/giiddab/",
-        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
         # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
         # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
         # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
@@ -620,8 +621,9 @@ if __name__ == '__main__':
         # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
         # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
         # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
         # ]
-        # "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/"
         pool_list = []
         urls_len = len(urls)
         for idx, item in enumerate(urls):
