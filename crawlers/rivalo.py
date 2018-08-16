@@ -5,9 +5,11 @@ import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from multiprocessing import Pool
+from selenium.webdriver.common.proxy import *
 import re
 import psycopg2
 import time
+import random
 
 urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -16,17 +18,14 @@ urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-concacaf-league/ggcbeedab/",
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-    "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-apostas-em-partidas-da-temporada/ghhcaba/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-b/gbeejdab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-copa-paulista-group-2/ggbafedab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c/gchcbddab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-c-grupo-b/gchcbedab/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-campeonato-brasileiro-sub-20-grupo-f/gfcfjedab/",
-    "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileiro-serie-a-apostas-em-partidas-da-temporada/gbggjeba/",
     "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileiro-u23/gbijdeba/",
     "https://www.rivalo.com/pt/apostas/futebol-liga-dos-campeoes-qualification/gibagba/",
-    "https://www.rivalo.com/pt/apostas/futebol-liga-dos-campeoes-apostas-em-partidas-da-temporada/ggidgba/",
     "https://www.rivalo.com/pt/apostas/futebol-mexico-primeira-divisao-apertura/gcidab/",
     "https://www.rivalo.com/pt/apostas/futebol-mexico-liga-de-promocao-apertura/gbjbidab/",
     "https://www.rivalo.com/pt/apostas/futebol-inglaterra-primeira-liga/gbdab/",
@@ -56,13 +55,11 @@ urls = [
     "https://www.rivalo.com/pt/apostas/futebol-australia-primeira-liga-nacional-de-queensland/gdbciddab/",
     "https://www.rivalo.com/pt/apostas/futebol-australia-npl-tasmania/gdbfaidab/",
     "https://www.rivalo.com/pt/apostas/futebol-australia-primeira-liga-victoria/gbacbgdab/",
-    "https://www.rivalo.com/pt/apostas/futebol-australia-liga-hyundai-a-apostas-em-partidas-da-temporada/gbciecba/",
     "https://www.rivalo.com/pt/apostas/futebol-dinamarca-superliga/gbcdab/",
     "https://www.rivalo.com/pt/apostas/futebol-dinamarca-1-divisao/gbddab/",
     "https://www.rivalo.com/pt/apostas/futebol-dinamarca-2-divisao-grupo-1/gefbgidab/",
     "https://www.rivalo.com/pt/apostas/futebol-dinamarca-2-divisao-grupo-2/gefbgjdab/",
     "https://www.rivalo.com/pt/apostas/futebol-liga-europa-qualification/gibajba/",
-    "https://www.rivalo.com/pt/apostas/futebol-liga-europa-apostas-em-partidas-da-temporada/ggidfba/",
     "https://www.rivalo.com/pt/apostas/futebol-peru-primeira-divisao-apertura/gdeeghdab/",
     "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-liga-regional-bavaria/gcbcjjdab/",
     "https://www.rivalo.com/pt/apostas/futebol-alemanha-amadores-regionalliga-norte/geedab/",
@@ -185,7 +182,6 @@ urls = [
     "https://www.rivalo.com/pt/apostas/futebol-finnland-amateure-3-division-helsinki-uusimaa-3/giahjdab/",
     "https://www.rivalo.com/pt/apostas/basquetebol/gcbab/l/",
     "https://www.rivalo.com/pt/apostas/basquetebol-estados-unidos-america-wnba/gfjbdab/",
-    "https://www.rivalo.com/pt/apostas/basquetebol-alemanha-apostas-em-partidas-da-temporada/ghgjgba/",
     "https://www.rivalo.com/pt/apostas/basquetebol-internacional-campeonato-europeu-sub-18-div-a-feminino-playoffs/ggdjgdab/",
     "https://www.rivalo.com/pt/apostas/basquetebol-internacional-campeonato-europeu-sub-18-div-a-feminino-qualificacao-para-jogos-de-posicao/gcjefidab/",
     "https://www.rivalo.com/pt/apostas/basquetebol-brasil-paulista-league/gbbjhgba/",
@@ -217,7 +213,6 @@ urls = [
     "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-e/gecagcdab/",
     "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
     "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-    "https://www.rivalo.com/pt/apostas/hoquei-internacional-apostas-em-partidas-da-temporada/gbcfigba/",
     "https://www.rivalo.com/pt/apostas/hoquei-internacional-amigaveis-de-clubes-modziez/gbegdeba/",
     "https://www.rivalo.com/pt/apostas/hoquei-suecia-shl/gbbfdab/",
     "https://www.rivalo.com/pt/apostas/andebol-internacional-u18-world-championship-damen/gbdehidab/",
@@ -226,7 +221,6 @@ urls = [
     "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-sub-18-grupo-c/ghbaeddab/",
     "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-grupo-d/ghbaefdab/",
     "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-europeu-2018-feminino/gbbjddba/",
-    "https://www.rivalo.com/pt/apostas/andebol-internacional-apostas-em-partidas-da-temporada/gecedba/",
     "https://www.rivalo.com/pt/apostas/andebol-internacional-campeonato-do-mundo-2019-masculinos/ghcefba/",
     "https://www.rivalo.com/pt/apostas/andebol-brasil-super-paulista/gbihhdba/",
     "https://www.rivalo.com/pt/apostas/beisebol-estados-unidos-america-mlb/gcfdab/",
@@ -238,7 +232,6 @@ urls = [
     "https://www.rivalo.com/pt/apostas/badmington/gdbbab/l/",
     "https://www.rivalo.com/pt/apostas/badmington-internacional-open-do-vietname-wt/ghcjfidab/",
     "https://www.rivalo.com/pt/apostas/badmington-internacional-open-do-vietname-wt-pares/ghcjfjdab/",
-    "https://www.rivalo.com/pt/apostas/cricket-australia-apostas-em-partidas-da-temporada/gbhefiba/",
     "https://www.rivalo.com/pt/apostas/cricket-inglaterra-natwest-t20-blast-north-group/ggahgidab/",
     "https://www.rivalo.com/pt/apostas/cricket-inglaterra-natwest-t20-blast-south-group/ggahhadab/",
     "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
@@ -250,26 +243,23 @@ urls = [
 main_url = "https://www.rivalo.com/pt/apostas/"
 
 
-def instance_browser():
+def instance_browser(proxyIp=None):
     chrome_options = Options()
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("no-sandbox")
-    return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
-    # return webdriver.Chrome(chrome_options=chrome_options)
+
+    if proxyIp:
+        myProxy = "%s:60099" % proxyIp
+        chrome_options.add_argument("--proxy-server=%s" % myProxy)
+    # return webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
+    return webdriver.Chrome(chrome_options=chrome_options)
 
 
 def main_page(browser, main_url):
     print('getting...', main_url)
     browser.get(main_url)
-
-
-def split_list(old_list):
-    new_list = []
-    new_list.append(old_list[:len(old_list)//2])
-    new_list.append(old_list[len(old_list)//2:])
-    return new_list
 
 
 def write_file(name, data):
@@ -301,12 +291,11 @@ mercado_list = [
     "Quem ganha o 1. tempo?",
     "Quem ganha o 2. tempo?",
     "Par/ Impar",
-    # "Acima/Abaixo de gols (para cada time)",
+    "Aposta acima/abaixo pontos na partida",
+    "2-Way (incluindo prorrogação/ pênaltis)",
+    "Período Num. 1 Acima/Abaixo da aposta (1,5)",
     "Acima/ Abaixo Faltas",
-    # "Acima/Abaixo escanteios",
     "Qual time vai conseguir a maioria dos escanteios?",
-    # "Acima/Abaixo escanteios 1 tempo",
-    # "Acima/Abaixo escanteios 2 tempo",
     "1. tempo Aposta Acima/Abaixo",
     "2. tempo Aposta Acima/Abaixo",
     "Acima/ Abaixo cartões tempo total",
@@ -322,23 +311,14 @@ mercado_list = [
     "Acima/Abaixo sets na partida",
     "Acima/Abaixo games na partida",
     "HC 1,5:0 games na partida",
-    # "Acima/Abaixo games na partida",
-    # "Acima/Abaixo Games Ganhos (Para cada jogador)",
     "Quem vai ganhar o set 1?",
     "Quem vai ganhar o set 2?",
-    # "2-way ( incluindo a prorrogação/pênaltis)",
     "Quem ganha o período Num. 1?",
     "Período Num. 1 Acima/Abaixo da aposta",
     "Empate não tem aposta",
-    "Acima/Abaixo de gols(para cada time)",
     "Quem ganha o período Num. 1?",
-    # "Período Num. 1 Acima/Abaixo da aposta(todos dessa categoria)",
-    "Dupla possibilidade",
-    "Handicap",
     "Aposta Acima/Abaixo",
     "Quem ganha o tempo Num. 1",
-    # "Aposta acima/abaixo pontos na partida(quando tiver mercado aberto)",
-    # "Aposta acima/abaixo pontos no set(quando tiver mercado aberto)",
     "Quem vai ganhar o set Num. 1?",
 ]
 
@@ -369,7 +349,6 @@ def running_crawler(league_url, current_item, total_items):
         league_name = league_infos[1]
         camp_name = league_infos[2]
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        print("")
         # print(esp_name, league_name, camp_name)
 
         matches_list = []
@@ -427,16 +406,16 @@ def running_crawler(league_url, current_item, total_items):
 
             event_name = home + ' - ' + visitant
 
-            print('Event: ', event_name)
-            print('Casa: ', home)
-            print('Visitante: ', visitant)
+            print('Event: ', event_name.encode('utf-8'))
+            print('Casa: ', home.encode('utf-8'))
+            print('Visitante: ', visitant.encode('utf-8'))
 
             print('Casa odd: ', home_odd)
             print('Empate odd: ', draw_odd)
             print('Visitante odd:', visitant_odd)
 
-            print('Data :', current_date)
-            print('Hora :', current_hour)
+            print('Data :', current_date.encode('utf-8'))
+            print('Hora :', current_hour.encode('utf-8'))
 
             evento["esporte_nome"] = esp_name
             evento["liga_nome"] = league_name
@@ -507,9 +486,11 @@ def running_crawler(league_url, current_item, total_items):
                 if len(poss_list) == 0:
                     continue
                 for m in mercado_list:
-                    mercado_pattern = "Acima/Abaixo games na partida ("
+                    m1 = re.match("Acima\/Abaixo games na partida \(", m)
+                    m2 = re.match("Acima\/Abaixo Games Ganhos \(", m)
+                    m3 = re.match("Acima\/Abaixo sets na partida \(,", m)
 
-                    if m == mercado_data[0]:
+                    if m == mercado_data[0] or m1 or m2 or m3:
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
                         if len(poss_list) == 6:
@@ -582,26 +563,43 @@ def running_crawler(league_url, current_item, total_items):
         browser.close()
 
 
+def get_ip():
+    ip_list = [
+        "146.252.88.44",
+        "146.252.88.59",
+        "146.252.88.61",
+        "146.252.88.72",
+        "146.252.88.85",
+        "146.252.88.91"
+    ]
+    browser = instance_browser(random.choice(ip_list))
+    browser.get("https://www.showmyip.gr/")
+    ip = browser.find_element_by_css_selector(".ip_address").text.strip()
+    print(ip)
+
+
 if __name__ == '__main__':
+    # get_ip()
+    # time.sleep(5)
     while True:
         print("Start")
         start_time = time.time()
         pool = Pool(processes=12)
         # urls = [
-            # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
-            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
-            # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
-            # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
-            # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
-            # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
+        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
+        # "https://www.rivalo.com/pt/apostas/hoquei-internacional-presidents-cup/gcjcghdab/",
+        # "https://www.rivalo.com/pt/apostas/cricket-inglaterra-cricket-super-league-feminino/gfecghdab/",
+        # "https://www.rivalo.com/pt/apostas/cricket-indias-ocidentais-premier-league-das-caraibas/gcjaeddab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-amigaveis-de-clubes/gigdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-taca-da-liga/gbhdab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-russia-liga-junior/gbcgbadab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
+        # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
         # ]
         pool_list = []
         urls_len = len(urls)
