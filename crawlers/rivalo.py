@@ -525,6 +525,16 @@ def running_crawler(league_url, current_item, total_items):
                                 " " + poss_list[5].strip()
                             mercado["poss_valor_3"] = float(
                                 poss_list[5].replace(",", "."))
+                        elif len(poss_list) == 2:
+                            mercado["poss_nome_1"] = poss_list[0].strip() + \
+                                " " + poss_list[1].strip()
+                            mercado["poss_valor_1"] = float(
+                                poss_list[1].replace(",", "."))
+
+                            mercado["poss_nome_2"] = None
+                            mercado["poss_valor_2"] = None
+                            mercado["poss_nome_3"] = None
+                            mercado["poss_valor_3"] = None
                         else:
                             mercado["poss_nome_1"] = poss_list[0].strip() + \
                                 " " + poss_list[1].strip()
@@ -622,6 +632,7 @@ if __name__ == '__main__':
         # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
         # "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/",
         #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
+            # "https://www.rivalo.com/pt/apostas/futebol-inglaterra-primeira-liga/gbdab/",
         # ]
         pool_list = []
         urls_len = len(urls)
