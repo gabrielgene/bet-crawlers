@@ -10,6 +10,7 @@ import re
 import psycopg2
 import time
 import random
+import requests
 
 urls = [
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
@@ -243,16 +244,24 @@ urls = [
 main_url = "https://www.rivalo.com/pt/apostas/"
 
 
-def instance_browser(proxyIp=None):
+def instance_browser(useProxy=False):
+    ip_list = [
+        "146.252.88.44",
+        "146.252.88.59",
+        "146.252.88.61",
+        "146.252.88.72",
+        "146.252.88.85",
+        "146.252.88.91"
+    ]
     chrome_options = Options()
     prefs = {"profile.managed_default_content_settings.images": 2}
     chrome_options.add_experimental_option("prefs", prefs)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("no-sandbox")
 
-    if proxyIp:
-        myProxy = "%s:60099" % proxyIp
-        chrome_options.add_argument("--proxy-server=%s" % myProxy)
+    if useProxy:
+        myProxy = "%s:60099" % random.choice(ip_list)
+        chrome_options.add_argument("--proxy-server=%s" % myProxy )
     driver = webdriver.Chrome(executable_path='/root/bet-crawlers/chromedriver', chrome_options=chrome_options)
     # driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.set_page_load_timeout(60)
@@ -280,9 +289,6 @@ def is_hour(item):
 mercado_list = [
     "Dupla possibilidade",
     "Empate não tem aposta",
-    "Handicap (0:1)",
-    "Handicap (0:2)",
-    "Handicap (1:0)",
     "Aposta Acima/Abaixo (2,5)",
     "Aposta Acima/Abaixo (0,5)",
     "Aposta Acima/Abaixo (1,5)",
@@ -339,6 +345,8 @@ def running_crawler(league_url, current_item, total_items):
 
         print("Running item: " + str(current_item + 1) + " of " + str(total_items))
 
+        r = requests.get(league_url)
+        print(r.status_code)
         print("Getting...", league_url)
         browser.get(league_url)
 
@@ -491,30 +499,33 @@ def running_crawler(league_url, current_item, total_items):
                     m1 = re.match("Acima\/Abaixo games na partida \(", m)
                     m2 = re.match("Acima\/Abaixo Games Ganhos \(", m)
                     m3 = re.match("Acima\/Abaixo sets na partida \(,", m)
+                    m4 = re.match("Handicap \(", m)
+                    m5 = re.match("Aposta Acima\/Abaixo \(", m)
 
-                    if m == mercado_data[0] or m1 or m2 or m3:
+                    if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5:
+                        import pdb; pdb.set_trace()
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
                         if len(poss_list) == 6:
-                            mercado["poss_nome_1"] = poss_list[0] + \
-                                " " + poss_list[1]
+                            mercado["poss_nome_1"] = poss_list[0].strip() + \
+                                " " + poss_list[1].strip()
                             mercado["poss_valor_1"] = float(
                                 poss_list[1].replace(",", "."))
-                            mercado["poss_nome_2"] = poss_list[2] + \
-                                " " + poss_list[3]
+                            mercado["poss_nome_2"] = poss_list[2].strip() + \
+                                " " + poss_list[3].strip()
                             mercado["poss_valor_2"] = float(
                                 poss_list[3].replace(",", "."))
-                            mercado["poss_nome_3"] = poss_list[4] + \
-                                " " + poss_list[5]
+                            mercado["poss_nome_3"] = poss_list[4].strip()+ \
+                                " " + poss_list[5].strip()
                             mercado["poss_valor_3"] = float(
                                 poss_list[5].replace(",", "."))
                         else:
-                            mercado["poss_nome_1"] = poss_list[0] + \
-                                " " + poss_list[1]
+                            mercado["poss_nome_1"] = poss_list[0].strip() + \
+                                " " + poss_list[1].strip()
                             mercado["poss_valor_1"] = float(
                                 poss_list[1].replace(",", "."))
-                            mercado["poss_nome_2"] = poss_list[2] + \
-                                " " + poss_list[3]
+                            mercado["poss_nome_2"] = poss_list[2].strip() + \
+                                " " + poss_list[3].strip()
                             mercado["poss_valor_2"] = float(
                                 poss_list[3].replace(",", "."))
 
@@ -565,19 +576,19 @@ def running_crawler(league_url, current_item, total_items):
         browser.close()
 
 
-def get_ip():
-    ip_list = [
-        "146.252.88.44",
-        "146.252.88.59",
-        "146.252.88.61",
-        "146.252.88.72",
-        "146.252.88.85",
-        "146.252.88.91"
-    ]
-    browser = instance_browser(random.choice(ip_list))
-    browser.get("https://www.showmyip.gr/")
-    ip = browser.find_element_by_css_selector(".ip_address").text.strip()
-    print(ip)
+# def get_ip():
+#     ip_list = [
+#         "146.252.88.44",
+#         "146.252.88.59",
+#         "146.252.88.61",
+#         "146.252.88.72",
+#         "146.252.88.85",
+#         "146.252.88.91"
+#     ]
+    # browser = instance_browser(random.choice(ip_list))
+    # browser.get("https://www.showmyip.gr/")
+    # ip = browser.find_element_by_css_selector(".ip_address").text.strip()
+    # print(ip)
 
 
 if __name__ == '__main__':
@@ -588,9 +599,11 @@ if __name__ == '__main__':
         start_time = time.time()
         pool = Pool(processes=12)
         # urls = [
-        # "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
-        # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-brasil-brasileirao-serie-a/giddab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-brasil-taca-paulista/gbhjhddab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-irlanda-do-norte-primeira-liga/giiddab/",
+        #  "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-sul-americana/ggijdab/",
         # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
         # "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
         # "https://www.rivalo.com/pt/apostas/hoquei-internacional-liga-dos-campeoes-de-hoquei-grupo-h/gecagfdab/",
@@ -603,6 +616,7 @@ if __name__ == '__main__':
         # "https://www.rivalo.com/pt/apostas/futebol-hungria-nb-i/gfadab/",
         # "https://www.rivalo.com/pt/apostas/futebol-juniores-internacionais-taca-do-mundo-feminina-sub-20-grupo-c/gbdbahdab/",
         # ]
+        # "https://www.rivalo.com/pt/apostas/futebol-bolivia-liga-profissional-boliviana-encerramento/gbhbeadab/"
         pool_list = []
         urls_len = len(urls)
         for idx, item in enumerate(urls):
@@ -611,6 +625,7 @@ if __name__ == '__main__':
         pool.join()
         write_file("time", "loop time: " + "--- %s seconds ---" %
                    (time.time() - start_time))
+        # running_crawler(urls[0], 1, 1)
         print("--- %s seconds ---" % (time.time() - start_time))
         print("Finish loop")
         time.sleep(1)
