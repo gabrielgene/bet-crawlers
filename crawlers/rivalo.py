@@ -15,6 +15,11 @@ import logging
 
 
 urls = [
+    "https://www.rivalo.com/pt/apostas/volei-de-praia-internacional-fivb-world-tour-final-hamburg-2018/ghdcfcdab/",
+    "https://www.rivalo.com/pt/apostas/volei-de-praia-internacional-fivb-world-tour-final-hamburg-2018-mulheres/ghdcfedab/",
+    "https://www.rivalo.com/pt/apostas/voleibol-internacional-u23-womens-pan-american-cup/gbcajdba/",
+    "https://www.rivalo.com/pt/apostas/voleibol-internacional-jogos-amigaveis-internacionais-femininos/gddahdab/",
+    "https://www.rivalo.com/pt/apostas/voleibol-brasil-u19-paulista/ggabdcdab/",
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-taca-dos-campeoes-internacionais/gcjabjdab/",
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-supertaca-europeia/ggiadab/",
     "https://www.rivalo.com/pt/apostas/futebol-clubes-internacionais-copa-libertadores-fase-final/gdajdab/",
