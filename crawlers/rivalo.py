@@ -566,7 +566,6 @@ def running_crawler(league_url, current_item, total_items):
                 data["evento"] = evento
                 data["mercado"] = mercado
                 if have_mercado == 1:
-                    print(data)
                     rivalo.append(data)
 
             load_scout.click()
