@@ -197,8 +197,7 @@ urls = [
     "https://www.rivalo.com/pt/apostas/basquetebol-ilhas-filipinas-mpbl/ggidcddab/",
     "https://www.rivalo.com/pt/apostas/basquetebol-puerto-rico-superior-nacional/gfgifba/",
     "https://www.rivalo.com/pt/apostas/basquetebol-uruguai-el-metro/gbjeghba/",
-    "https://www.rivalo.com/pt/apostas/tenis/gfbab/h/",
-    "https://www.rivalo.com/pt/apostas/tenis/gfbab/l/",
+    "https://www.rivalo.com/pt/apostas/tenis-wta-wta-cincinnati-usa-women-double/gggbfedab/",
     "https://www.rivalo.com/pt/apostas/tenis-atp-atp-toronto-canada-men-singles/ggfiicdab/",
     "https://www.rivalo.com/pt/apostas/tenis-atp-atp-toronto-canada-men-double/ggfiiddab/",
     "https://www.rivalo.com/pt/apostas/tenis-atp-grand-slam/gdhghba/",
@@ -206,6 +205,7 @@ urls = [
     "https://www.rivalo.com/pt/apostas/tenis-wta-wta-montreal-canada-women-singles/gggbejdab/",
     "https://www.rivalo.com/pt/apostas/tenis-wta-wta-montreal-canada-women-double/gggbfadab/",
     "https://www.rivalo.com/pt/apostas/tenis-wta-grand-slam/gcgdbba/",
+    "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-gwangju-south-korea-men-singles/ghafagdab/",
     "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-aptos-usa-men-singles/ghaejbdab/",
     "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-aptos-usa-men-double/ghaejcdab/",
     "https://www.rivalo.com/pt/apostas/tenis-encontro-atp-challenger-portoroz-slovenia-men-singles/ghaejedab/",
@@ -321,6 +321,8 @@ mercado_list = [
     "Acima/Abaixo gols segundo tempo",
     "Acima/Abaixo cartões segundo tempo",
     "Dupla Possibilidade segundo tempo",
+    "As equipes marcam no 1. tempo?",
+    "As equipes marcam no 2. tempo?",
     "Empate não tem aposta segundo tempo",
     "Acima/Abaixo pontos",
     "Quem vencerá o 1.tempo?",
@@ -336,6 +338,7 @@ mercado_list = [
     "Aposta Acima/Abaixo",
     "Quem ganha o tempo Num. 1",
     "Quem vai ganhar o set Num. 1?",
+    "Quem ganha o período Num. 1?",
 ]
 
 
@@ -357,7 +360,7 @@ def running_crawler(league_url, current_item, total_items):
             print("Dont need proxy")
             browser = instance_browser()
         browser.set_page_load_timeout(60)
-        main_page(browser, main_url)
+        # main_page(browser, main_url)
 
         print("Running item: " + str(current_item + 1) + " of " + str(total_items))
         print("Getting...", league_url)
@@ -516,8 +519,9 @@ def running_crawler(league_url, current_item, total_items):
                     m5 = re.match("Aposta Acima\/Abaixo \(", mercado_data[0])
                     m6 = re.match("Acima\/Abaixo \(", mercado_data[0])
                     m7 = re.match("1. tempo Aposta Acima\/Abaixo \(", mercado_data[0])
+                    m8 = re.match("2. tempo Aposta Acima\/Abaixo \(", mercado_data[0])
 
-                    if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5 or m6 or m7:
+                    if m == mercado_data[0] or m1 or m2 or m3 or m4 or m5 or m6 or m7 or m8:
                         have_mercado = 1
                         mercado["mercado_nome"] = mercado_data[0]
                         if len(poss_list) == 6:
